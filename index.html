@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg py-0">
+            <div class="container px-0">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#" id="logo">
+                    <img src="assets/images/GCS-logo.webp" alt="GCS Logo" class="logo-img" id="logoImg">
+                </a>
+                <button id="menuToggle"
+                    style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                    <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_412_1366" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="80" height="60">
+                            <rect width="80" height="60" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_412_1366)">
+                            <path
+                                d="M19.7928 38.6603C18.9748 38.6603 18.2892 38.3836 17.7359 37.8303C17.1827 37.277 16.906 36.5914 16.906 35.7735C16.906 34.9556 17.1827 34.27 17.7359 33.7167C18.2892 33.1634 18.9748 32.8868 19.7928 32.8868H60.2073C61.0252 32.8868 61.7108 33.1634 62.2641 33.7167C62.8174 34.27 63.094 34.9556 63.094 35.7735C63.094 36.5914 62.8174 37.277 62.2641 37.8303C61.7108 38.3836 61.0252 38.6603 60.2073 38.6603H19.7928ZM19.7928 27.1132C18.9748 27.1132 18.2892 26.8366 17.7359 26.2833C17.1827 25.73 16.906 25.0444 16.906 24.2265C16.906 23.4086 17.1827 22.723 17.7359 22.1697C18.2892 21.6164 18.9748 21.3397 19.7928 21.3397H60.2073C61.0252 21.3397 61.7108 21.6164 62.2641 22.1697C62.8174 22.723 63.094 23.4086 63.094 24.2265C63.094 25.0444 62.8174 25.73 62.2641 26.2833C61.7108 26.8366 61.0252 27.1132 60.2073 27.1132H19.7928Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="container sidebar-header">
+            <div style="display: flex; justify-content: flex-end;">
+                <button class="close-btn" id="closeSidebar"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16 ">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="container sidebar-content">
+            <div class="sidebar-grid">
+                <!-- Column 1 - Main Navigation -->
+                <div class="nav-column main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item" data-section="about">
+                            <a href="#about" class="nav-link">
+                                ABOUT
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item " data-section="services">
+                            <a href="#services" class="nav-link">
+                                SERVICES & SOLUTIONS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="software">
+                            <a href="#software" class="nav-link">
+                                SOFTWARE & CONSULTANCY
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="products">
+                            <a href="#products" class="nav-link">PRODUCTS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#career" class="nav-link">CAREERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Separator Line -->
+                <div class="sidebar-separator"></div>
+
+                <!-- Column 2 & 3 - Services Grid -->
+                <div class="services-grid">
+                    <div class="services-column">
+                        <ul id="dynamicServicesMenu" class="services-menu">
+                            <!-- Services will be populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Links - Vertical on Right -->
+                <div class="social-links-vertical effect-1">
+                    <a href="#" class="social-icon-side">
+                        <img src="assets/images/side-menu-icons/facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="assets/images/side-menu-icons/twitter.svg" alt="Twitter" style="
+                        margin-right: -5px" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="assets/images/side-menu-icons/youtube.svg" alt="YouTube" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="assets/images/side-menu-icons/linkedin.svg" alt="LinkedIn" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+        <!-- Video Background -->
+        <div class="video-background">
+            <video id="heroVideo" autoplay loop playsinline muted>
+                <source src="assets/videos/Gcs-Back-Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="row hero-content-height align-items-center">
+                <div class="col-lg-12 col-xl-12">
+                    <div style="margin-top: 100px;">
+                        <h1 class="hero-title">
+                            <span class="d-block">We Power</span>
+                            <span class="d-block">
+                                <span class="d-inline-block">Smart</span>
+                                <span class="rotating-text-container">
+                                    <span class="text-red rotating-text active">Cities</span>
+                                    <span class="text-red rotating-text">Infrastructure</span>
+                                    <span class="text-red rotating-text">Surveillance</span>
+                                    <span class="text-red rotating-text">Systems</span>
+                                </span>
+                            </span>
+
+                        </h1>
+                        <p class="hero-subtitle">
+                            RELIABLE | SCALABLE | IMPACTFUL
+                        </p>
+                        <div class="hero-actions" id="hero-button">
+                            <a href="#" class="btn btn-primary-red">
+                                Learn More
+                                <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Together Section -->
+    <section class="work-together-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Content Column -->
+                <div class="col-lg-6">
+                    <div class="work-content">
+                        <div class="section-badge mb-5">
+                            <span class="badge-circle" id="work-badge-circle"></span>
+                            <h2 class="section-title">Work Together For Your Business Success</h2>
+                        </div>
+
+                        <div class="work-description">
+                            <p>At GCS, we strive for excellence in fulfilling our promise of providing quality yet
+                                practical IT solutions in an efficient, cost effective manner while helping our clients
+                                increase their ROI and lower their TCO.</p>
+                        </div>
+
+                        <div class="work-features">
+                            <div class="feature-item">
+                                <div class="feature-check">
+                                    <img src="assets/images/check.svg" alt="Check" width="25" height="25">
+                                </div>
+                                <span>Over 1700 professional workforce</span>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-check">
+                                    <img src="assets/images/check.svg" alt="Check" width="25" height="25">
+                                </div>
+                                <span>5+ offices in Pakistan</span>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-check">
+                                    <img src="assets/images/check.svg" alt="Check" width="25" height="25">
+                                </div>
+                                <span>International presence in USA | Turkey | UAE</span>
+                            </div>
+
+                            <div class="feature-item">
+                                <div class="feature-check">
+                                    <img src="assets/images/check.svg" alt="Check" width="25" height="25">
+                                </div>
+                                <span>Rich exposure and experience of more than 10,000 sites deployed all over
+                                    Pakistan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Column -->
+                <div class="col-lg-6">
+                    <div class="work-visuals">
+                        <div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+                            <img src="assets/images/img-collage.png" alt="Technology Visual" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row" style="align-items: center;">
+                <!-- Sites Deployed -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="">
+                            <img src="assets/images/statistics icon/web-icon.svg" alt="Sites Deployed" width="64"
+                                height="64">
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number">10000+</h3>
+                            <p class="stat-label">Sites Deployed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Satisfied Enterprise Clients -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="">
+                            <img src="assets/images/statistics icon/client-icon.svg" alt="Enterprise Clients" width="64"
+                                height="64">
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number">1710+</h3>
+                            <p class="stat-label">Satisfied Enterprise Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Resources -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="">
+                            <img src="assets/images/statistics icon/HR-icon.svg" alt="HR Professionals" width="64"
+                                height="64">
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number">1710+</h3>
+                            <p class="stat-label">Human Resources</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High-Value Projects -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item">
+                        <div class="">
+                            <img src="assets/images/statistics icon/10b-icon.svg" alt="High-Value Projects" width="64"
+                                height="64">
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number">10 Billion+</h3>
+                            <p class="stat-label">High-Value Projects Delivered & In-Hand</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About GCS Section -->
+    <section class="about-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge justify-content-center">
+                        <span class="badge-circle" id="about-badge-circle"></span>
+                        <h2 class="section-title">About GCS</h2>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">PIONEERING SECURE</p>
+                        <h3 class="subtitle-red">INTELLIGENT INFRASTRUCTURE SINCE <span class="year-outline">2010</span>
+                        </h3>
+                    </div>
+                    <div class="about-description">
+                        <p>GCS Pvt. Ltd. is a leading technology integrator providing secure, scalable solutions for
+                            government and enterprise clients. With deep expertise in surveillance, infrastructure, and
+                            AI, we turn complex challenges into real time systems.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Mission Values -->
+            <div class="row g-4 mb-5">
+                <!-- Vision -->
+                <div class="col-lg-4">
+                    <div class="vmv-card">
+                        <div class="vmv-image">
+                            <!-- <img src="../../assets/images/mission-vision-values/vision.svg" alt="Vision Icon"> -->
+                            <svg width="116" height="127" viewBox="0 0 116 127" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_351_1427)">
+                                    <path
+                                        d="M84.4842 30.7083C76.9754 23.418 67.0529 19.5642 56.5842 19.8721C36.7692 20.4581 20.4304 36.4095 19.3875 56.1848C18.732 68.5704 24.1253 80.5787 33.8093 88.2961C38.1696 91.7724 40.7719 97.3445 40.7719 103.215V103.731C40.7719 105.568 42.2618 107.068 44.1092 107.068H71.3735C73.211 107.068 74.7108 105.578 74.7108 103.731V103.215C74.7108 97.3842 77.4223 91.7923 82.16 87.8889C91.0495 80.5588 96.1448 69.7524 96.1448 58.2408C96.1448 47.7721 92.003 37.9887 84.4941 30.6884L84.4842 30.7083ZM48.4695 70.8251H44.4171C42.7783 70.8251 41.4374 69.4842 41.4374 67.8454C41.4374 66.2065 42.7783 64.8657 44.4171 64.8657H45.4898C47.1286 64.8657 48.4695 66.2065 48.4695 67.8454V70.8251ZM60.8551 100.404H55.1341V77.4897H60.8551V100.404ZM77.909 82.7638C72.3965 87.3128 68.9401 93.6298 68.1852 100.404H67.5198V77.4897H71.5722C76.8959 77.4897 81.2165 73.1592 81.2165 67.8454C81.2165 62.5316 76.886 58.2011 71.5722 58.2011H70.4995C65.1757 58.2011 60.8551 62.5316 60.8551 67.8454V70.8251H55.1341V67.8454C55.1341 62.5216 50.8036 58.2011 45.4898 58.2011H44.4171C39.0933 58.2011 34.7728 62.5316 34.7728 67.8454C34.7728 73.1592 39.1033 77.4897 44.4171 77.4897H48.4695V100.404H47.2975C46.5823 93.5205 43.2749 87.3128 37.971 83.0915C29.9655 76.705 25.5059 66.7826 26.0522 56.5424C26.9163 40.2036 40.4143 27.0234 56.7829 26.5466C65.4439 26.2884 73.6381 29.4668 79.8458 35.4957C86.0535 41.5246 89.4703 49.6096 89.4703 58.2607C89.4703 67.7659 85.2589 76.6951 77.909 82.7538V82.7638ZM67.5297 70.8251V67.8454C67.5297 66.2065 68.8706 64.8657 70.5094 64.8657H71.5821C73.2209 64.8657 74.5618 66.2065 74.5618 67.8454C74.5618 69.4842 73.2209 70.8251 71.5821 70.8251H67.5297Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M69.1089 110.336H46.8802C45.0428 110.336 43.543 111.826 43.543 113.673C43.543 115.521 45.0328 117.01 46.8802 117.01H69.1089C70.9463 117.01 72.4461 115.521 72.4461 113.673C72.4461 111.826 70.9563 110.336 69.1089 110.336Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M64.4404 120.258H51.5482C49.7107 120.258 48.2109 121.748 48.2109 123.596C48.2109 125.443 49.7008 126.933 51.5482 126.933H64.4404C66.2779 126.933 67.7777 125.443 67.7777 123.596C67.7777 121.748 66.2878 120.258 64.4404 120.258Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M57.9955 15.1541C59.833 15.1541 61.3327 13.6643 61.3327 11.8169V3.40417C61.3327 1.56668 59.8429 0.0668945 57.9955 0.0668945C56.1481 0.0668945 54.6582 1.55675 54.6582 3.40417V11.8169C54.6582 13.6544 56.1481 15.1541 57.9955 15.1541Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M91.6361 27.3709C92.5499 27.3709 93.4537 27.0034 94.1192 26.2684L99.7508 20.011C100.982 18.6404 100.873 16.5347 99.5025 15.3031C98.1319 14.0715 96.0262 14.1807 94.7946 15.5514L89.1629 21.8088C87.9313 23.1794 88.0406 25.2851 89.4113 26.5167C90.0469 27.0928 90.8514 27.3709 91.646 27.3709H91.6361Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M112.662 54.387H104.249C102.412 54.387 100.912 55.8768 100.912 57.7242C100.912 59.5717 102.402 61.0615 104.249 61.0615H112.662C114.5 61.0615 115.999 59.5717 115.999 57.7242C115.999 55.8768 114.51 54.387 112.662 54.387Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M99.3443 92.5968L92.5307 87.6505C91.0409 86.5679 88.9551 86.8957 87.8725 88.3855C86.7898 89.8754 87.1176 91.9612 88.6074 93.0438L95.421 97.9901C96.017 98.4172 96.7023 98.6258 97.3777 98.6258C98.4107 98.6258 99.4238 98.149 100.079 97.2551C101.162 95.7653 100.834 93.6795 99.3443 92.5968Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M21.8901 26.2684C22.5457 27.0034 23.4594 27.3709 24.3732 27.3709C25.1678 27.3709 25.9624 27.0928 26.608 26.5167C27.9787 25.2851 28.0879 23.1794 26.8563 21.8088L21.2247 15.5514C19.993 14.1807 17.8874 14.0715 16.5167 15.3031C15.1461 16.5347 15.0368 18.6404 16.2684 20.011L21.9001 26.2684H21.8901Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M11.75 54.387H3.33727C1.49979 54.387 0 55.8768 0 57.7242C0 59.5717 1.48985 61.0615 3.33727 61.0615H11.75C13.5875 61.0615 15.0872 59.5717 15.0872 57.7242C15.0872 55.8768 13.5974 54.387 11.75 54.387Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M23.4699 87.6405L16.6563 92.5868C15.1664 93.6695 14.8387 95.7552 15.9213 97.2451C16.5768 98.139 17.5899 98.6158 18.6229 98.6158C19.2983 98.6158 19.9935 98.4072 20.5796 97.9801L27.3932 93.0338C28.883 91.9512 29.2108 89.8654 28.1281 88.3755C27.0455 86.8857 24.9597 86.5579 23.4699 87.6405Z"
+                                        fill="#828282" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_351_1427">
+                                        <rect width="116" height="126.866" fill="white"
+                                            transform="translate(0 0.0668945)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="canvas">
+                            <span class="shade"></span>
+                        </div>
+                        <div class="vmv-content">
+                            <h4 class="vmv-title">Vision</h4>
+                            <p class="vmv-text">Our vision is to become Pakistan's most trusted and forward thinking ICT
+                                integrator, recognized for shaping the future of digital infrastructure, secure
+                                environments, and smart systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mission -->
+                <div class="col-lg-4">
+                    <div class="vmv-card mission-card-layout  d-flex flex-column flex-md-column">
+                        <div class="vmv-content">
+                            <h4 class="vmv-title">Mission</h4>
+                            <p class="vmv-text">Our mission is to provide innovative, reliable, and cost effective IT
+                                and security solutions that empower organizations to operate securely, efficiently, and
+                                intelligently in an ever evolving digital world.</p>
+                        </div>
+                        <div class="vmv-image mt-4">
+                            <svg width="132" height="133" viewBox="0 0 132 133" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_351_1418)">
+                                    <path
+                                        d="M121.243 60.9382C121.243 59.1967 119.829 57.785 118.086 57.785C116.342 57.785 114.929 59.1967 114.929 60.9382C114.929 90.8447 90.5643 115.18 60.6214 115.18C30.6785 115.18 6.31413 90.8447 6.31413 60.9382C6.31413 31.0317 30.6728 6.69684 60.6214 6.69684C70.9326 6.69684 80.9656 9.5955 89.6374 15.0804C91.1088 16.0119 93.061 15.5722 93.9936 14.1026C94.9262 12.633 94.486 10.6832 93.0146 9.75172C83.3349 3.62461 72.1317 0.390381 60.6214 0.390381C27.1971 0.390381 0 27.5487 0 60.9382C0 81.2751 10.091 99.3035 25.5404 110.291L13.6304 127.11C12.6225 128.533 12.9642 130.5 14.3835 131.501C14.9396 131.895 15.571 132.08 16.2024 132.08C17.193 132.08 18.1661 131.617 18.7802 130.749L30.8697 113.675C39.6631 118.645 49.8121 121.486 60.6156 121.486C71.4191 121.486 81.5681 118.645 90.3615 113.675L102.451 130.749C103.065 131.617 104.038 132.08 105.029 132.08C105.66 132.08 106.297 131.895 106.848 131.501C108.273 130.494 108.609 128.527 107.601 127.11L95.6909 110.291C111.134 99.3035 121.231 81.2751 121.231 60.9382H121.243Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M81.7716 28.5901C82.6057 27.0627 82.038 25.1476 80.5029 24.3144C74.4379 21.0223 67.5619 19.2866 60.6221 19.2866C37.6248 19.2866 18.9199 37.9746 18.9199 60.9382C18.9199 83.9018 37.6306 102.59 60.6221 102.59C83.6137 102.59 102.324 83.9018 102.324 60.9382C102.324 59.1967 100.911 57.785 99.1673 57.785C97.4236 57.785 96.0102 59.1967 96.0102 60.9382C96.0102 80.4304 80.1322 96.2891 60.6163 96.2891C41.1005 96.2891 25.2225 80.4304 25.2225 60.9382C25.2225 41.446 41.1005 25.5873 60.6163 25.5873C66.5076 25.5873 72.3409 27.0627 77.4849 29.8514C79.02 30.6845 80.9316 30.1175 81.7658 28.5843L81.7716 28.5901Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M60.6206 44.2925C63.6503 44.2925 66.6162 45.1141 69.1997 46.6647C70.6943 47.5615 72.6349 47.0813 73.5327 45.5886C74.4306 44.0958 73.9498 42.1576 72.4553 41.2608C68.8927 39.1201 64.803 37.9861 60.6264 37.9861C47.9576 37.9861 37.6465 48.2789 37.6465 60.9381C37.6465 73.5974 47.9518 83.8902 60.6264 83.8902C73.301 83.8902 83.6064 73.5974 83.6064 60.9381C83.6064 59.1966 82.1929 57.7849 80.4493 57.7849C78.7057 57.7849 77.2922 59.1966 77.2922 60.9381C77.2922 70.1143 69.8138 77.5837 60.6264 77.5837C51.4391 77.5837 43.9606 70.1143 43.9606 60.9381C43.9606 51.7619 51.4391 44.2925 60.6264 44.2925H60.6206Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M131.954 32.484C131.734 31.1938 130.743 30.1697 129.451 29.9151L118.127 27.6818L119.986 15.283C120.166 14.0853 119.638 12.8877 118.636 12.205C117.628 11.5222 116.319 11.4817 115.271 12.095L91.3291 26.085C90.5066 26.5652 89.9447 27.3925 89.7999 28.3356L87.7724 41.8222L59.0518 58.1959C57.5399 59.0579 57.0127 60.9846 57.8759 62.4947C58.4551 63.513 59.521 64.0857 60.6216 64.0857C61.1546 64.0857 61.6875 63.9527 62.1799 63.6692L90.7093 47.4054L104.282 50.0842C104.485 50.1247 104.687 50.1421 104.896 50.1421C105.452 50.1421 106.002 49.9975 106.489 49.7082L130.43 35.7182C131.56 35.0587 132.168 33.7627 131.948 32.4724L131.954 32.484ZM95.8243 30.7656L112.768 20.8662L111.668 28.2141L94.7585 37.8532L95.8243 30.7714V30.7656ZM104.34 43.6736L99.0915 42.638L115.103 33.5081L120.056 34.4859L104.334 43.6736H104.34Z"
+                                        fill="#828282" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_351_1418">
+                                        <rect width="132" height="131.695" fill="white"
+                                            transform="translate(0 0.390381)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <div class="canvas">
+                                <div class="shade"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Values -->
+                <div class="col-lg-4">
+                    <div class="vmv-card">
+                        <div class="vmv-image">
+                            <!-- <img src="../../assets/images/mission-vision-values/values.svg" alt="Values Icon"> -->
+                            <svg width="105" height="119" viewBox="0 0 105 119" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_351_1442)">
+                                    <path
+                                        d="M104.98 53.9134C104.98 53.8637 104.98 53.8139 104.98 53.7642C104.98 53.6648 104.98 53.5654 104.98 53.4759C104.98 53.4262 104.97 53.3665 104.96 53.3168C104.95 53.2174 104.93 53.1179 104.9 53.0284C104.9 52.9986 104.9 52.9688 104.88 52.9389C104.88 52.9091 104.86 52.8892 104.85 52.8693C104.82 52.7799 104.78 52.6904 104.74 52.6108C104.711 52.5512 104.691 52.5014 104.651 52.4418C104.611 52.3722 104.561 52.3125 104.511 52.2429C104.471 52.1833 104.421 52.1236 104.371 52.0639C104.371 52.054 104.351 52.0441 104.341 52.0341L89.3086 35.8963C89.0992 35.6775 88.8598 35.4886 88.5805 35.3594L72.3905 27.6733C72.0713 27.5241 71.7122 27.4446 71.3631 27.4446H33.5966C33.2375 27.4446 32.8884 27.5241 32.5692 27.6733L16.3792 35.3594C16.1099 35.4886 15.8605 35.6676 15.651 35.8963L0.638219 52.0142C0.638219 52.0142 0.598318 52.0639 0.578367 52.0938C0.528491 52.1435 0.48859 52.2031 0.448688 52.2628C0.398812 52.3324 0.348935 52.412 0.309034 52.4816C0.279108 52.5313 0.249182 52.581 0.229232 52.6406C0.179355 52.7401 0.149429 52.8395 0.119503 52.9389C0.119503 52.9688 0.0995529 52.9887 0.0895776 53.0185C0.0895776 53.0284 0.0895776 53.0483 0.0895776 53.0583C0.0596517 53.1875 0.0397011 53.3068 0.0297258 53.4361C0.0297258 53.456 0.0297258 53.4858 0.0297258 53.5057C0.00977518 53.8139 0.0596517 54.1122 0.159405 54.4105C0.159405 54.4105 0.159405 54.4205 0.159405 54.4304C0.209281 54.5597 0.269133 54.6989 0.33896 54.8182C0.348935 54.8381 0.368886 54.858 0.378861 54.8878C0.428738 54.9674 0.478614 55.0568 0.538466 55.1364L50.6444 117.749C50.6444 117.749 50.6444 117.749 50.6544 117.759C50.6843 117.789 50.7042 117.828 50.7342 117.858C50.7541 117.878 50.7741 117.898 50.794 117.918C50.8638 117.987 50.9437 118.057 51.0135 118.127C51.0135 118.127 51.0334 118.137 51.0334 118.146C51.0334 118.146 51.0334 118.146 51.0434 118.146C51.0733 118.166 51.1033 118.196 51.1432 118.216C51.2429 118.286 51.3427 118.345 51.4524 118.395C51.4524 118.395 51.4723 118.405 51.4823 118.415C51.4823 118.415 51.4823 118.415 51.4923 118.415C51.4923 118.415 51.5023 118.415 51.5122 118.425C51.6519 118.485 51.7916 118.534 51.9312 118.564C51.9412 118.564 51.9611 118.564 51.9711 118.574C52.001 118.574 52.031 118.574 52.0509 118.584C52.1906 118.614 52.3402 118.634 52.4898 118.634C52.6395 118.634 52.7791 118.614 52.9287 118.584C52.9587 118.584 52.9786 118.584 53.0085 118.574C53.0285 118.574 53.0484 118.564 53.0684 118.554C53.208 118.514 53.3477 118.475 53.4774 118.415C53.4774 118.415 53.4874 118.415 53.4973 118.405C53.5273 118.395 53.5572 118.375 53.5771 118.365C53.6669 118.315 53.7567 118.266 53.8465 118.206C53.8764 118.186 53.9063 118.166 53.9362 118.146C53.9562 118.127 53.9861 118.117 54.0061 118.097C54.0759 118.037 54.1457 117.977 54.2056 117.908C54.2255 117.888 54.2455 117.868 54.2654 117.848C54.2854 117.828 54.3053 117.798 54.3253 117.769C54.3353 117.759 54.3552 117.749 54.3652 117.729L104.471 55.1165C104.671 54.8679 104.8 54.5995 104.89 54.3211C104.89 54.2912 104.9 54.2514 104.91 54.2216C104.94 54.1122 104.96 54.0029 104.97 53.8935L104.98 53.9134ZM17.2471 41.2159L30.4045 47.4602L26.4244 57.5824L6.86281 52.3622L17.2471 41.2159ZM78.9643 58.5668L74.5951 47.4702L87.7525 41.2259L98.2565 52.5114L78.9543 58.5767L78.9643 58.5668ZM69.9466 48.733L74.0365 59.1236H32.2001L31.0828 58.8253L35.053 48.733H69.9366H69.9466ZM73.827 63.9063L52.4998 110.5L31.1227 63.787L31.2624 63.8267C31.4619 63.8765 31.6714 63.9063 31.8809 63.9063H73.827ZM25.1575 62.1961C25.1874 62.3054 25.2174 62.4049 25.2672 62.5043L42.2452 99.6024L8.80799 57.831L25.1575 62.1961ZM79.2934 63.4787L95.8325 58.2784L62.7544 99.6223L79.2934 63.4787ZM70.8444 32.2173L83.2038 38.0838L70.8444 43.9503H34.1552L21.7958 38.0838L34.1552 32.2173H70.8444Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M52.4995 18.5752C53.8263 18.5752 54.8936 17.5013 54.8936 16.1888V3.31239C54.8936 1.98995 53.8163 0.926025 52.4995 0.926025C51.1828 0.926025 50.1055 1.99989 50.1055 3.31239V16.1789C50.1055 17.5013 51.1828 18.5653 52.4995 18.5653V18.5752Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M77.3975 22.99C77.7965 23.2485 78.2553 23.3778 78.7042 23.3778C79.4923 23.3778 80.2604 22.99 80.7192 22.294L88.0411 11.0581C88.7593 9.95444 88.4501 8.47291 87.3329 7.74705C86.2256 7.03114 84.7393 7.33938 84.0111 8.45302L76.6892 19.6888C75.971 20.7925 76.2802 22.2741 77.3975 22.9999V22.99Z"
+                                        fill="#828282" />
+                                    <path
+                                        d="M24.2801 22.2941C24.7389 23 25.507 23.3779 26.2951 23.3779C26.744 23.3779 27.1928 23.2486 27.6018 22.9901C28.7091 22.2742 29.0283 20.7926 28.3101 19.679L20.9882 8.4432C20.27 7.3395 18.7837 7.02132 17.6664 7.73723C16.5592 8.45314 16.24 9.93468 16.9582 11.0483L24.2801 22.2841V22.2941Z"
+                                        fill="#828282" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_351_1442">
+                                        <rect width="105" height="117.727" fill="white"
+                                            transform="translate(0 0.926025)" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <div class="canvas">
+                                <div class="shade"></div>
+                            </div>
+                        </div>
+                        <div class="vmv-content">
+                            <h4 class="vmv-title">Values</h4>
+                            <ul class="values-list">
+                                <li>Integrity & Trust</li>
+                                <li>Innovation & Excellence</li>
+                                <li>Security First</li>
+                                <li>Client Centric Approach</li>
+                                <li>Collaboration & Teamwork</li>
+                                <li>Accountability</li>
+                                <li>Agility & Responsiveness</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learn More Button -->
+            <div class="row">
+                <div class="hero-actions justify-content-center" id="hero-actions">
+                    <a href="#" class="btn btn-primary-red">
+                        Learn More
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Solutions Section -->
+    <section class="services-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <h2 class="section-title">Our Services & Solutions</h2>
+                        <span class="badge-circle" id="services-badge-circle"></span>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">WHAT WE OFFER:</p>
+                    </div>
+                    <div>
+                        <h3 class="section-subtitle-red">SMART, SECURE, & SCALABLE SOLUTIONS</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <div class="custom-carousel-controls">
+                <button class="custom-carousel-control prev " type="button" id="servicesPrev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#2D2D2D" />
+                        </g>
+                    </svg>
+                </button>
+                <button class="custom-carousel-control next" type="button" id="servicesNext">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#2D2D2D" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Services Swiper -->
+            <div class="swiper pb-4 pt-4" id="servicesSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Smart City -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/SmartCity.svg" alt="Smart City" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Smart City</h4>
+                            </div>
+                            <p class="service-description">Integrated platforms to power efficient, responsive urban
+                                services.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask0_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask0_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Internet Of Things -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/IOT.svg" alt="IoT" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Internet Of Things</h4>
+                            </div>
+                            <p class="service-description">Connected devices delivering real time data and remote
+                                control.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask1_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask1_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cyber Security -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/cybersecurity-icon.svg" alt="Cybersecurity"
+                                class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Cyber Security</h4>
+                            </div>
+                            <p class="service-description">Advanced protection for critical systems and data
+                                infrastructure.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask2_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask2_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Services -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/cloud-icon.svg" alt="Cloud Services"
+                                class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Cloud Services</h4>
+                            </div>
+                            <p class="service-description">Scalable cloud solutions for modern business requirements.
+                            </p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask3_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask3_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Data Center -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/datacenter.svg" alt="Data Center" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Data Center</h4>
+                            </div>
+                            <p class="service-description">Robust infrastructure for reliable data storage and
+                                processing.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask4_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask4_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Fiber Optic -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/fiber.svg" alt="Fiber Optic" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Fiber Optic</h4>
+                            </div>
+                            <p class="service-description">High speed network solutions for ultra fast connectivity.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask5_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask5_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Infrastructure -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/infra.svg" alt="Infrastructure" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Infrastructure</h4>
+                            </div>
+                            <p class="service-description">Complete IT infrastructure solutions for enterprise needs.
+                            </p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask6_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask6_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Smart Surveillance -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/SmartServ.svg" alt="Smart Surveillance"
+                                class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Smart Surveillance</h4>
+                            </div>
+                            <p class="service-description">AI powered security systems for enhanced safety and
+                                monitoring.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask7_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask7_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Intelligent Transportation System -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/ITS.svg" alt="Intelligent Transportation System"
+                                class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">Intelligent Transportation System</h4>
+                            </div>
+                            <p class="service-description">Smart traffic management for efficient urban mobility.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask8_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask8_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- GIS Services -->
+                    <div class="swiper-slide">
+                        <div class="service-card">
+                            <img src="assets/images/our-Services/GIS.svg" alt="GIS" class="service-icon">
+                            <div class="service-margin">
+                                <h4 class="service-title">GIS</h4>
+                            </div>
+                            <p class="service-description">Geographic information system for spatial data analysis.</p>
+                            <a href="#" class="service-link">
+                                Learn More <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <mask id="mask9_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0"
+                                        y="0" width="21" height="21">
+                                        <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                            fill="#D9D9D9" />
+                                    </mask>
+                                    <g mask="url(#mask9_668_225)">
+                                        <path
+                                            d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                            fill="currentColor" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="row">
+                <div class="hero-actions justify-content-center">
+                    <a href="#" class="btn btn-primary-red">
+                        View All
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Product section-->
+    <section class="product-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <h2 class="section-title">Our Products</h2>
+                        <span class="badge-circle" id="product-badge-circle"></span>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">EXPLORE OUR PRODUCTS:</p>
+                    </div>
+                    <div>
+                        <h3 class="section-subtitle-red">BUILD FOR Efficient, POWER BY INTELLIGENCE.</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Custom Navigation Arrows -->
+            <div class="custom-carousel-controls">
+                <button class="custom-carousel-control prev " type="button" id="productsPrev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#2D2D2D" />
+                        </g>
+                    </svg>
+
+                </button>
+                <button class="custom-carousel-control next" type="button" id="productsNext">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#2D2D2D" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Products Swiper -->
+            <div class="swiper pb-4 pt-4" id="productsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Product 1 - Smart Cities -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-2.png" alt="Fiber Technology"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Smart Cities</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Integrated security infrastructure to monitor public areas,
+                                    enhance safety, and support emergency response.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask1_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask1_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product 2 - Site Monitoring -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-1.png" alt="Cyber Defense Strategies"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Site Monitoring</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Real time surveillance and alerts for office premises,
+                                    warehouses, and sensitive sites accessible from anywhere.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask0_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 - Smart Surveillance System -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-3.png" alt="AI Infrastructure"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Smart Surveillance System</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Advanced surveillance using AI powered cameras for real time
+                                    monitoring, facial recognition, and threat detection.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask2_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask2_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 - Calls Management -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-4.png" alt="Smart Transportation"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Calls Management</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Handles, routes, and records citizen or internal service
+                                    calls with full tracking and reporting capabilities.</p>
+                                <div style="display: flex">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask3_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask3_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 - Emergency & Response System -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-5.png" alt="Advanced Security"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Emergency & Response System</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Centralized platform for reporting incidents and dispatching
+                                    emergency services quickly and efficiently.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask4_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask4_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 - A.I. Powered Smart e-Challan System -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-6.png" alt="Network Innovation"
+                                    class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">A.I. Powered Smart e-Challan System</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">AI enabled monitoring systems for real time threat detection
+                                    and response.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask5_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask5_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 - Smart Cities -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-7.png" alt="Smart Analytics" class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">Smart Cities</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Technology driven urban solutions for better governance,
+                                    traffic control, waste management, and public services.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask6_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask6_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 - A.I. Facial/Geo Attendance System -->
+                    <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="assets/images/products/product-8.png" alt="Future Mobility" class="img-fluid">
+                            </div>
+                            <div class="product-content">
+                                <h4 class="product-title">A.I. Facial/Geo Attendance System</h4>
+                                <div class="product-separator"></div>
+                                <p class="product-excerpt">Tracks employee attendance using facial recognition or
+                                    geolocation ideal for field and remote teams.</p>
+                                <div style="display: flex;">
+                                    <a href="#" class="product-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask7_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask7_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="row">
+                <div class="hero-actions justify-content-center">
+                    <a href="#" class="btn btn-primary-red">
+                        View All
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Blogs Section -->
+    <section class="blogs-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-badge">
+                        <span class="badge-circle" id="blogs-badge-circle"></span>
+                        <h2 class="section-title">Our Blogs</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Navigation Arrows -->
+            <div class="custom-carousel-controls" id="blogsArrow">
+                <button class="custom-carousel-control prev" type="button" id="blogsPrev">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#ffff" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#ffff" />
+                        </g>
+                    </svg>
+
+                </button>
+                <button class="custom-carousel-control next" type="button" id="blogsNext">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_336_2074" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="48" height="49">
+                            <rect x="48" y="48.0044" width="48" height="48" transform="rotate(180 48 48.0044)"
+                                fill="#ffff" />
+                        </mask>
+                        <g mask="url(#mask0_336_2074)">
+                            <path
+                                d="M32.3504 22.0043L22.5504 12.2043C22.1504 11.8043 21.9587 11.3376 21.9754 10.8043C21.9921 10.271 22.2004 9.8043 22.6004 9.4043C23.0004 9.03763 23.4671 8.84596 24.0004 8.8293C24.5337 8.81263 25.0004 9.0043 25.4004 9.4043L38.6004 22.6043C38.8004 22.8043 38.9421 23.021 39.0254 23.2543C39.1087 23.4876 39.1504 23.7376 39.1504 24.0043C39.1504 24.271 39.1087 24.521 39.0254 24.7543C38.9421 24.9876 38.8004 25.2043 38.6004 25.4043L25.4004 38.6043C25.0337 38.971 24.5754 39.1543 24.0254 39.1543C23.4754 39.1543 23.0004 38.971 22.6004 38.6043C22.2004 38.2043 22.0004 37.7293 22.0004 37.1793C22.0004 36.6293 22.2004 36.1543 22.6004 35.7543L32.3504 26.0043L10.0004 26.0043C9.43372 26.0043 8.95872 25.8126 8.57539 25.4293C8.19206 25.046 8.00039 24.571 8.00039 24.0043C8.00039 23.4376 8.19206 22.9626 8.57539 22.5793C8.95872 22.196 9.43372 22.0043 10.0004 22.0043L32.3504 22.0043Z"
+                                fill="#ffff" />
+                        </g>
+                    </svg>
+
+                </button>
+            </div>
+
+            <!-- Blogs Swiper -->
+            <div class="swiper pb-4 pt-4" id="blogsSwiper">
+                <div class="swiper-wrapper">
+                    <!-- Blog 1 - Securing What Matters -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-1.png" alt="Cyber Defense Strategies"
+                                    class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Securing <br> What Matters</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Cyber defense strategies for critical systems.Cyber defense
+                                    strategies for critical systems</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask0_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask0_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 2 - The Power Of Fiber -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-2.png" alt="Fiber Technology" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">The Power Of <br> Fiber</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Enabling speed, uptime, and future growth.Enabling speed,
+                                    uptime, and future growth</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask1_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask1_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 3 - AI For Infrastructure -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-3.png" alt="AI Infrastructure" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">AI For <br> Infrastructure</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Using data to drive smarter city operations.Using data to drive
+                                    smarter city operations</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask2_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask2_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 4 - Smarter Roads Ahead -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-4.png" alt="Smart Transportation" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Smarter Roads <br> Ahead</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">ITS solutions making traffic faster and safer.ITS solutions
+                                    making traffic faster and safer</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask3_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask3_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 5 - Advanced Security -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-1.png" alt="Advanced Security" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Advanced <br> Security</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Next-gen protection for modern threats.Next-gen protection for
+                                    modern threats</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask4_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask4_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 6 - Network Innovation -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-2.png" alt="Network Innovation" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Network <br> Innovation</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Building tomorrow's connectivity today.Building tomorrow's
+                                    connectivity today.</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask5_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask5_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 7 - Smart Analytics -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-3.png" alt="Smart Analytics" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Smart <br> Analytics</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Data-driven insights for better decisions.Data-driven insights
+                                    for better decisions</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask6_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask6_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog 8 - Future Mobility -->
+                    <div class="swiper-slide">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="assets/images/blog/blog-4.png" alt="Future Mobility" class="img-fluid">
+                                <div class="blog-overlay"></div>
+                            </div>
+                            <div class="blog-content">
+                                <h4 class="blog-title">Future <br> Mobility</h4>
+                                <div class="blog-separator"></div>
+                                <p class="blog-excerpt">Revolutionary transport solutions ahead.Revolutionary transport
+                                    solutions ahead.</p>
+                                <div style="display: flex; justify-content: end;">
+                                    <a href="#" class="blog-link">
+                                        Read More <svg width="21" height="21" viewBox="0 0 21 21" fill="currentColor"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <mask id="mask7_668_225" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                                x="0" y="0" width="21" height="21">
+                                                <rect x="-6.10352e-05" y="0.100098" width="20.8084" height="20.8084"
+                                                    fill="white" />
+                                            </mask>
+                                            <g mask="url(#mask7_668_225)">
+                                                <path
+                                                    d="M5.54894 15.7065L4.33511 14.4927L12.6585 6.16934H5.20213V4.4353H15.6063V14.8395H13.8723V7.38316L5.54894 15.7065Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View All Button -->
+            <div class="row">
+                <div class="hero-actions justify-content-center">
+                    <a href="#" class="btn btn-primary-red">
+                        View All
+                        <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <span class="badge-circle" id="clients-badge-circle"></span>
+                        <h2 class="section-title">Our Clients</h2>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">MORE THAN CUSTOMERS</p>
+                        <h3 class="subtitle-red">LONG-TERM PARTNERS IN TRANSFORMATION</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row client-row">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_1.png" alt="NIA">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_2.png" alt="Standard Chartered">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_3.png" alt="National Bank of Pakistan">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_4.png" alt="Government of Punjab">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_5.png" alt="Punjab Police">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_6.png" alt="Civil Aviation Authority">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_7.png" alt="Federal Investigation Agency">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_8.png" alt="Government of Sindh">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_9.png" alt="K-Electric">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="assets/images/client/client_10.png" alt="Gul Ahmed">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta-section" class="cta-section">
+        <!-- Video Background -->
+        <div class="video-background">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/planning something.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
+
+        <!-- CTA Content -->
+        <div class="container">
+            <div class="row min-vh-75 align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="cta-content">
+                        <div id="badge-title-div">
+
+                            <h2 class="cta-title text-center">
+
+                                <span id="typewriter" class="typewriter">
+                                    <span class="badge-circle" id="cta-badge-circle"></span>
+                                </span>
+                            </h2>
+                        </div>
+
+                        <div>
+                            <p class="cta-subtitle">
+                                <span class="word-animate">WE'RE</span>
+                                <span class="word-animate">READY</span>
+                                <span class="word-animate">TO</span>
+                                <span class="word-animate">BUILD</span>
+                                <span class="word-animate">WITH</span>
+                                <span class="word-animate">YOU</span>
+                            </p>
+                        </div>
+                        <div class="cta-actions">
+                            <a href="#" class="btn btn-outline-white">
+                                Get In Touch <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications & Accreditations Section -->
+    <section class="certifications-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <h2 class="section-title">Certifications & Accreditations</h2>
+                        <span class="badge-circle" id="certifications-badge-circle"></span>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="certifications-section-subtitle-gray">RECOGNIZED. VERIFIED. TRUSTED.</p>
+                        <h3 class="subtitle-red">QUALITY YOU CAN TRUST, COMPLIANCE YOU CAN COUNT ON.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div style="display: flex; justify-content: space-between;">
+                <!-- P@SHA -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="certification-logo">
+                        <img src="assets/images/certifications/pasha.png" alt="P@SHA - Pakistan IT Industry Association"
+                            class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- KCCI -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="certification-logo">
+                        <img src="assets/images/certifications/kcci.png"
+                            alt="KCCI - Karachi Chamber of Commerce & Industry" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- PSEB -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="certification-logo">
+                        <img src="assets/images/certifications/pseb.png" alt="PSEB - Pakistan Software Export Board"
+                            class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Government Certification -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="certification-logo">
+                        <img src="assets/images/certifications/gov.png" alt="Government of Pakistan" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- ISO 27001 -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="certification-logo">
+                        <img src="assets/images/certifications/ISO.png" alt="ISO 27001 Certification" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-2">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <h2 class="section-title">FAQs</h2>
+                        <span class="badge-circle" id="faq-badge-circle"></span>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">ANSWERS YOU CAN TRUST</p>
+                        <h3 class="subtitle-red">STRAIGHT FROM THE SOURCE</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="faq-container">
+                <div class="faq-wrapper">
+                    <div class="faq-accordion">
+                        <!-- FAQ 1 -->
+                        <div class="faq-item active">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">How does GCS help with cybersecurity and data protection?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">GCS delivers end-to-end security solutions, helping you safeguard
+                                    your data and systems against cyber threats and intrusions using industry best
+                                    practices and tools.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="faq-item">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">How is GCS cost effective for businesses?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">We provide scalable solutions that grow with your business,
+                                    reducing overall TCO while maximizing ROI through efficient resource utilization and
+                                    strategic technology implementation.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="faq-item">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">Can GCS ensure high quality and reliable service?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">With over 10,000 successful deployments and industry
+                                    certifications, GCS maintains strict quality standards and 24/7 support to ensure
+                                    reliable service delivery.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="faq-item">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">What kind of expertise does GCS bring to projects?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">Our team brings deep expertise in surveillance, AI,
+                                    infrastructure, and smart city solutions, backed by international certifications and
+                                    extensive field experience.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="faq-item">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">What are the benefits of outsourcing IT needs to GCS?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">Outsourcing to GCS provides access to specialized expertise,
+                                    reduces operational costs, ensures 24/7 support, and allows you to focus on core
+                                    business activities while we handle your IT infrastructure.</p>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="faq-item">
+                            <button class="faq-header" onclick="toggleFAQ(this)">
+                                <h3 class="faq-question">Does GCS work with the latest technologies?</h3>
+                                <div class="faq-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <mask id="mask0_1002_2860" style="mask-type:alpha" maskUnits="userSpaceOnUse"
+                                            x="0" y="0" width="24" height="24">
+                                            <rect x="24" width="24" height="24" transform="rotate(90 24 0)"
+                                                fill="#D9D9D9" />
+                                        </mask>
+                                        <g mask="url(#mask0_1002_2860)">
+                                            <path
+                                                d="M12 13.0115L18.296 6.46183C18.5919 6.15394 18.9686 6 19.426 6C19.8834 6 20.2601 6.15394 20.5561 6.46183C20.852 6.76972 21 7.16158 21 7.6374C21 8.11323 20.852 8.50509 20.5561 8.81298L13.13 16.5382C12.9686 16.7061 12.7937 16.8251 12.6054 16.895C12.417 16.965 12.2152 17 12 17C11.7848 17 11.583 16.965 11.3946 16.895C11.2063 16.8251 11.0314 16.7061 10.87 16.5382L3.44395 8.81298C3.14798 8.50509 3 8.11323 3 7.6374C3 7.16158 3.14798 6.76972 3.44395 6.46183C3.73991 6.15394 4.11659 6 4.57399 6C5.03139 6 5.40807 6.15394 5.70404 6.46183L12 13.0115Z"
+                                                fill="#676767" />
+                                        </g>
+                                    </svg>
+
+                                </div>
+                            </button>
+                            <div class="faq-content">
+                                <p class="faq-answer">Yes, GCS stays at the forefront of technological advancement,
+                                    incorporating AI, IoT, cloud computing, and emerging technologies to deliver
+                                    cutting edge solutions for our clients.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-wrapper">
+                <div class="newsletter-content">
+                    <span class="badge-circle" id="newsletter-badge-circle"></span>
+                    <h2 class="section-title">Subscribe To Our Newsletter</h2>
+                    <p class="newsletter-title">Get The Latest Updates On Smart Tech, Infrastructure Projects, And
+                        Innovation</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email" required>
+                        <button class="newsletter-btn" type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Logo Section (First Line) -->
+            <div class="footer-logo-section">
+                <img src="assets/images/GCS-logo.png" alt="GCS Logo" class="footer-logo">
+            </div>
+
+            <!-- Footer Content Columns (Second Line) -->
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-company">
+                    <h5 class="footer-title">Head Office</h5>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <img src="assets/images/footer-icon/loc.svg" alt="Location Icon" class="contact-icon">
+                            <span>J-47 Block 6, PECHS Razi Road, Karachi, Pakistan.</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="assets/images/footer-icon/call.svg" alt="Phone Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2453</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="assets/images/footer-icon/fax.svg" alt="Fax Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2454</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="assets/images/footer-icon/email.svg" alt="Email Icon" class="contact-icon">
+                            <span>contact-us@gcspvt.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Offices -->
+                <div class="footer-offices">
+                    <h5 class="footer-title">Other Offices</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="has-arrow">Lahore Office</a></li>
+                        <li><a href="#" class="has-arrow">Islamabad Office</a></li>
+                        <li><a href="#" class="has-arrow">Peshawar Office</a></li>
+                        <li><a href="#" class="has-arrow">Quetta Office</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-quick-links">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Services & Solutions</a></li>
+                        <li><a href="#">Software & Consultancy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About GCS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us & Newsletter -->
+                <div class="footer-social-newsletter">
+                    <h5 class="newsletter-section-title">Subscribe To Our Newsletter</h5>
+                    <form class="footer-newsletter">
+                        <input type="email" class="footer-newsletter-input" placeholder="your email address here"
+                            required>
+                        <button class="footer-newsletter-btn" id="footer-newsletter-btn"
+                            type="submit">Subscribe</button>
+                    </form>
+                    <h5 class="footer-title">Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="">
+                            <img src="assets/images/social-icon/fb.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="assets/images/social-icon/twitter.svg" alt="Twitter" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="assets/images/social-icon/youtube.svg" alt="YouTube" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="assets/images/social-icon/linkedin.svg" alt="LinkedIn" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 GCS Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Newsletter Section -->
+    <div id="black-overlay-div"></div>
+    <section id="global-newsletter-section">
+        <div id="global-newsletter-div" class="container">
+            <div class="newsletter-wrapper">
+                <button id="close-news-letter-btn" onclick="hideNewsletterPopup()"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-x-lg"
+                        viewBox="0 0 16 16 ">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg></button>
+                <div class="newsletter-content">
+                    <span class="badge-circle" id="newsletter-badge-circle"></span>
+                    <h2 class="section-title">Subscribe To Our Newsletter</h2>
+                    <p class="newsletter-title">Get The Latest Updates On Smart Tech, Infrastructure Projects, And
+                        Innovation</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Email" required>
+                        <button class="newsletter-btn" type="submit">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Back to Top Button -->
+
+    <button id="backToTop" class="back-to-top">
+        <svg class="progress-ring">
+            <circle class="progress-ring__circle"></circle>
+            <circle class="progress-ring__progress" id="progressCircle"></circle>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="white" class="bi bi-arrow-up-short"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+        </svg>
+    </button>
+</body>
+
+</html>
