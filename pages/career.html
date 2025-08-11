@@ -1,20 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>GCS Website</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
-            integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-    </head>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
 <body>
-    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/mockup.json"></script>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg py-0">
+            <div class="container px-0">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#" id="logo">
+                    <img src="../assets/images/GCS-logo.webp" alt="GCS Logo" class="logo-img" id="logoImg">
+                </a>
+                <button id="menuToggle"
+                    style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                    <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_412_1366" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="80" height="60">
+                            <rect width="80" height="60" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_412_1366)">
+                            <path
+                                d="M19.7928 38.6603C18.9748 38.6603 18.2892 38.3836 17.7359 37.8303C17.1827 37.277 16.906 36.5914 16.906 35.7735C16.906 34.9556 17.1827 34.27 17.7359 33.7167C18.2892 33.1634 18.9748 32.8868 19.7928 32.8868H60.2073C61.0252 32.8868 61.7108 33.1634 62.2641 33.7167C62.8174 34.27 63.094 34.9556 63.094 35.7735C63.094 36.5914 62.8174 37.277 62.2641 37.8303C61.7108 38.3836 61.0252 38.6603 60.2073 38.6603H19.7928ZM19.7928 27.1132C18.9748 27.1132 18.2892 26.8366 17.7359 26.2833C17.1827 25.73 16.906 25.0444 16.906 24.2265C16.906 23.4086 17.1827 22.723 17.7359 22.1697C18.2892 21.6164 18.9748 21.3397 19.7928 21.3397H60.2073C61.0252 21.3397 61.7108 21.6164 62.2641 22.1697C62.8174 22.723 63.094 23.4086 63.094 24.2265C63.094 25.0444 62.8174 25.73 62.2641 26.2833C61.7108 26.8366 61.0252 27.1132 60.2073 27.1132H19.7928Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="container sidebar-header">
+            <div style="display: flex; justify-content: flex-end;">
+                <button class="close-btn" id="closeSidebar"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16 ">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="container sidebar-content">
+            <div class="sidebar-grid">
+                <!-- Column 1 - Main Navigation -->
+                <div class="nav-column main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item" data-section="about">
+                            <a href="#about" class="nav-link">
+                                ABOUT
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item " data-section="services">
+                            <a href="#services" class="nav-link">
+                                SERVICES & SOLUTIONS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="software">
+                            <a href="#software" class="nav-link">
+                                SOFTWARE & CONSULTANCY
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="products">
+                            <a href="#products" class="nav-link">PRODUCTS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#career" class="nav-link">CAREERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Separator Line -->
+                <div class="sidebar-separator"></div>
+
+                <!-- Column 2 & 3 - Services Grid -->
+                <div class="services-grid">
+                    <div class="services-column">
+                        <ul id="dynamicServicesMenu" class="services-menu">
+                            <!-- Services will be populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Links - Vertical on Right -->
+                <div class="social-links-vertical effect-1">
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/twitter.svg" alt="Twitter" style="
+                        margin-right: -5px" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/youtube.svg" alt="YouTube" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/linkedin.svg" alt="LinkedIn" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="heroSection">
+        <div class="image-background">
+            <img src="../assets/images/bg-image-careers.png" class="hero-background-image" alt="Background Image">
+            <div class="image-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-md-6 col-sm-4 col-xl-12">
+                    <div style="margin-top: -300px;">
+                        <h1 class="smart-surveillance">
+                            <span style="font-size: larger">Careers</span>
+                        </h1>
+                        <!-- <p class="hero-subtitle">
+                                RELIABLE | SCALABLE | IMPACTFUL
+                            </p> -->
+                        <!-- <div class="hero-actions" id="hero-button">
+                                <a href="#" class="btn btn-primary-red">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open position career -->
+    <!-- Open position career -->
+    <h2 style="  text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    color: #C94050;
+    margin: 40px 0 20px;
+    font-family: 'Poppins', sans-serif;">OUR OPEN POSITIONS</h2>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search Job" id="searchInput">
+        <select id="jobTypeFilter">
+            <option>Job Type</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Contract</option>
+        </select>
+        <select>
+            <option>Location</option>
+            <option>Karachi</option>
+            <option>Lahore</option>
+            <option>Islamabad</option>
+            <option>Remote</option>
+        </select>
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <div id="jobContainer"></div>
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Logo Section (First Line) -->
+            <div class="footer-logo-section">
+                <img src="../assets/images/GCS-logo.png" alt="GCS Logo" class="footer-logo">
+            </div>
+
+            <!-- Footer Content Columns (Second Line) -->
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-company">
+                    <h5 class="footer-title">Head Office</h5>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/loc.svg" alt="Location Icon" class="contact-icon">
+                            <span>J-47 Block 6, PECHS Razi Road, Karachi, Pakistan.</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/call.svg" alt="Phone Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2453</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/fax.svg" alt="Fax Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2454</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/email.svg" alt="Email Icon" class="contact-icon">
+                            <span>contact-us@gcspvt.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Offices -->
+                <div class="footer-offices">
+                    <h5 class="footer-title">Other Offices</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="has-arrow">Lahore Office</a></li>
+                        <li><a href="#" class="has-arrow">Islamabad Office</a></li>
+                        <li><a href="#" class="has-arrow">Peshawar Office</a></li>
+                        <li><a href="#" class="has-arrow">Quetta Office</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-quick-links">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Services & Solutions</a></li>
+                        <li><a href="#">Software & Consultancy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About GCS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us & Newsletter -->
+                <div class="footer-social-newsletter">
+                    <h5 class="newsletter-section-title">Subscribe To Our Newsletter</h5>
+                    <form class="footer-newsletter">
+                        <input type="email" class="footer-newsletter-input" placeholder="your email address here"
+                            required>
+                        <button class="footer-newsletter-btn" id="footer-newsletter-btn"
+                            type="submit">Subscribe</button>
+                    </form>
+                    <h5 class="footer-title">Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/fb.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/twitter.svg" alt="Twitter" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/youtube.svg" alt="YouTube" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/linkedin.svg" alt="LinkedIn" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 GCS Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+
+    <button id="backToTop" class="back-to-top">
+        <svg class="progress-ring">
+            <circle class="progress-ring__circle"></circle>
+            <circle class="progress-ring__progress" id="progressCircle"></circle>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="white" class="bi bi-arrow-up-short"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+        </svg>
+    </button>
+
+    <script>
+        // Global variable to store all jobs data
+        let allJobsData = [];
+
+        function renderJobs(data) {
+            const container = document.getElementById('jobContainer');
+            if (!container) return;
+
+            container.innerHTML = '';
+
+            if (!data || data.length === 0) {
+                container.innerHTML = '<div style="text-align: center; padding: 40px;">No job openings match your search criteria.</div>';
+                return;
+            }
+
+            data.forEach(section => {
+                // Only show sections that have jobs after filtering
+                if (section.jobs && section.jobs.length > 0) {
+                    let sectionHTML = `
+                        <div class="section">
+                            <div class="career-title">${section.category}</div>
+                    `;
+
+                    section.jobs.forEach(job => {
+                        sectionHTML += `
+                            <div class="job-card">
+                                <h3>${job.title}</h3>
+                                <div class="tags">
+                                    ${job.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </div>
+                                <p>${job.description}</p>
+                                <div class="buttons">
+                                    <button class="btn-apply">Apply Now</button>
+                                    <button class="btn-view">View Details</button>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    sectionHTML += `</div>`;
+                    container.innerHTML += sectionHTML;
+                }
+            });
+
+            // If all sections were empty after filtering
+            if (container.innerHTML === '') {
+                container.innerHTML = '<div style="text-align: center; padding: 40px;">No job openings match your search criteria.</div>';
+            }
+        }
+
+        function filterJobs() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const jobType = document.getElementById('jobTypeFilter').value;
+            const locationFilter = document.querySelector('select:not(#jobTypeFilter)');
+            const location = locationFilter ? locationFilter.value : '';
+
+            // Filter the data
+            const filteredData = allJobsData.map(section => {
+                const filteredJobs = section.jobs.filter(job => {
+                    // Search term matching
+                    const matchesSearch =
+                        job.title.toLowerCase().includes(searchTerm) ||
+                        job.description.toLowerCase().includes(searchTerm);
+
+                    // Job type matching
+                    const matchesJobType = jobType === "Job Type" || !jobType || job.tags.includes(jobType);
+
+                    // Location matching
+                    const matchesLocation = location === "Location" || !location || job.tags.includes(location);
+
+                    return matchesSearch && matchesJobType && matchesLocation;
+                });
+
+                return {
+                    ...section,
+                    jobs: filteredJobs
+                };
+            });
+
+            renderJobs(filteredData);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fetch data from mockup.json
+            fetch("../js/mockup.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    allJobsData = data;
+                    renderJobs(data);
+
+                    // Add event listeners for search and filters
+                    document.getElementById('searchBtn').addEventListener('click', filterJobs);
+                    document.getElementById('searchInput').addEventListener('keyup', function (event) {
+                        if (event.key === 'Enter') {
+                            filterJobs();
+                        }
+                    });
+                    document.getElementById('jobTypeFilter').addEventListener('change', filterJobs);
+                    const locationFilter = document.querySelector('select:not(#jobTypeFilter)');
+                    if (locationFilter) {
+                        locationFilter.addEventListener('change', filterJobs);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading data:', error);
+                    const container = document.getElementById('jobContainer');
+                    if (container) {
+                        container.innerHTML = `
+                            <div style="text-align: center; padding: 40px; color: #e74c3c;">
+                                Failed to load job listings. Please try again later.
+                            </div>
+                        `;
+                    }
+                });
+        });
+    </script>
+
 </body>
+
 </html>
