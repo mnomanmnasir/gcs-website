@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .svg-image {
+            border: 1px solid;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <!-- Swiper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+
+    <!-- Header Section -->
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg py-0">
+            <div class="container px-0">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#" id="logo">
+                    <img src="../assets/images/GCS-logo.webp" alt="GCS Logo" class="logo-img" id="logoImg">
+                </a>
+                <button id="menuToggle"
+                    style="background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                    <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="mask0_412_1366" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="80" height="60">
+                            <rect width="80" height="60" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#mask0_412_1366)">
+                            <path
+                                d="M19.7928 38.6603C18.9748 38.6603 18.2892 38.3836 17.7359 37.8303C17.1827 37.277 16.906 36.5914 16.906 35.7735C16.906 34.9556 17.1827 34.27 17.7359 33.7167C18.2892 33.1634 18.9748 32.8868 19.7928 32.8868H60.2073C61.0252 32.8868 61.7108 33.1634 62.2641 33.7167C62.8174 34.27 63.094 34.9556 63.094 35.7735C63.094 36.5914 62.8174 37.277 62.2641 37.8303C61.7108 38.3836 61.0252 38.6603 60.2073 38.6603H19.7928ZM19.7928 27.1132C18.9748 27.1132 18.2892 26.8366 17.7359 26.2833C17.1827 25.73 16.906 25.0444 16.906 24.2265C16.906 23.4086 17.1827 22.723 17.7359 22.1697C18.2892 21.6164 18.9748 21.3397 19.7928 21.3397H60.2073C61.0252 21.3397 61.7108 21.6164 62.2641 22.1697C62.8174 22.723 63.094 23.4086 63.094 24.2265C63.094 25.0444 62.8174 25.73 62.2641 26.2833C61.7108 26.8366 61.0252 27.1132 60.2073 27.1132H19.7928Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Menu -->
+    <div class="sidebar" id="sidebar">
+        <div class="container sidebar-header">
+            <div style="display: flex; justify-content: flex-end;">
+                <button class="close-btn" id="closeSidebar"><svg xmlns="http://www.w3.org/2000/svg" width="40"
+                        height="40" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16 ">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg></button>
+            </div>
+        </div>
+
+        <div class="container sidebar-content">
+            <div class="sidebar-grid">
+                <!-- Column 1 - Main Navigation -->
+                <div class="nav-column main-nav">
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">HOME</a>
+                        </li>
+                        <li class="nav-item" data-section="about">
+                            <a href="#about" class="nav-link">
+                                ABOUT
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item " data-section="services">
+                            <a href="#services" class="nav-link">
+                                SERVICES & SOLUTIONS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="software">
+                            <a href="#software" class="nav-link">
+                                SOFTWARE & CONSULTANCY
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item" data-section="products">
+                            <a href="#products" class="nav-link">PRODUCTS
+                                <span class="nav-arrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                                        class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                    </svg></span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#career" class="nav-link">CAREERS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">CONTACT US</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Separator Line -->
+                <div class="sidebar-separator"></div>
+
+                <!-- Column 2 & 3 - Services Grid -->
+                <div class="services-grid">
+                    <div class="services-column">
+                        <ul id="dynamicServicesMenu" class="services-menu">
+                            <!-- Services will be populated dynamically -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- Social Links - Vertical on Right -->
+                <div class="social-links-vertical effect-1">
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/facebook.svg" alt="Facebook" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/twitter.svg" alt="Twitter" style="
+                        margin-right: -5px" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/youtube.svg" alt="YouTube" />
+                    </a>
+                    <a href="#" class="social-icon-side">
+                        <img src="../assets/images/side-menu-icons/linkedin.svg" alt="LinkedIn" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="heroSection">
+        <div class="image-background">
+            <img src="../assets/images/about-us-bg-imag.png" alt="Background Image">
+            <div class="image-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12 col-md-6 col-sm-4 col-xl-12">
+                    <div style="margin-top: -300px;">
+                        <h1 class="smart-surveillance">
+                            <span style="font-size: larger">About Us</span>
+                        </h1>
+                        <!-- <p class="hero-subtitle">
+                                RELIABLE | SCALABLE | IMPACTFUL
+                            </p> -->
+                        <!-- <div class="hero-actions" id="hero-button">
+                                <a href="#" class="btn btn-primary-red">
+                                    Learn More
+                                    <i class="fas fa-arrow-right ms-2"></i>
+                                </a>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="work-together-section">
+        <p class="subtitle-gray fs-1" style="margin-top: -5%; margin-bottom: 5%;">INITIATE, INNOVATE, INSTIGATE</p>
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Content Column -->
+                <div class="col-lg-6">
+                    <div class="work-content">
+                        <div class="section-badge mb-5">
+                            <span class="badge-circle" id="work-badge-circle"></span>
+                            <h2 class="section-title">Our Mission</h2>
+                        </div>
+
+                        <div class="work-description">
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">At GCS
+                                (Pvt.) Ltd., our mission is to provide innovative, reliable, and cost effective IT and
+                                security solutions that empower organizations to operate securely, efficiently, and
+                                intelligently in an ever evolving digital world.</p>
+
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                We are committed to delivering end-to-end technology services, ranging from surveillance
+                                and access control systems to smart city applications, enterprise software, and
+                                AI-powered integrations. By combining cutting edge technologies with unmatched customer
+                                service, our goal is to build long term partnerships and provide solutions that solve
+                                real world problems for both private and public sector clients.
+                            </p>
+
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                We exist to bridge the gap between emerging technologies and practical business needs,
+                                with integrity, agility, and technical excellence at the core of everything we do.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Visual Column -->
+                <div class="col-lg-6">
+                    <div class="work-visuals">
+                        <div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+                            <img src="../assets/images/about-us-img-sec.png" alt="Technology Visual" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vision Section -->
+    <section class="work-together-section" style="margin-top: -5%;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Visual Column -->
+                <div class="col-lg-5">
+                    <div class="work-visuals">
+                        <div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+                            <img src="../assets/images/our-vision-img.png" alt="Technology Visual" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <!-- Content Column -->
+                <div class="col-lg-6">
+                    <div class="work-content">
+                        <div class="section-badge mb-5">
+                            <span class="badge-circle" id="work-badge-circle"></span>
+                            <h2 class="section-title">Our Vision</h2>
+                        </div>
+
+                        <div class="work-description">
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">Our vision
+                                is to become Pakistan’s most trusted and forward thinking ICT integrator, recognized for
+                                shaping the future of digital infrastructure, secure environments, and smart systems.
+                            </p>
+
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                We aspire to lead in the development of safe cities, smart solutions, and intelligent
+                                networks by leveraging our expertise in surveillance, AI, IoT, and enterprise grade
+                                applications. Through innovation, dedication, and a client first approach, we envision a
+                                world where technology is not only smarter but safer, protecting people, assets, and
+                                data with precision and foresight.
+                            </p>
+
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                At GCS, we don’t just adapt to the future, we help create it.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values Section -->
+    <div class="container py-5">
+        <div class="section-badge mb-5">
+            <span class="badge-circle" id="work-badge-circle"></span>
+            <h2 class="section-title">Our Values</h2>
+        </div>
+        <div class="row g-4">
+            <!-- Integrity & Trust -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #333;">Integrity & Trust</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            We conduct our business with the highest standards of honesty, ethics, and transparency,
+                            building lasting relationships based on trust.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Innovation & Excellence -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #E74C3C;">Innovation &
+                            Excellence</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            We continuously invest in new technologies and smart practices to ensure our clients receive
+                            forward thinking, scalable, and efficient solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Security First -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #9B59B6;">Security First</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            Whether it's physical security or cybersecurity, protecting our clients' people, assets, and
+                            infrastructure is always our top priority.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Client Centric Approach -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #FF4457;">Client Centric
+                            Approach</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            Every client is unique. We listen first, then tailor our solutions to meet each client's
+                            specific challenges, goals, and long term vision.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Collaboration & Teamwork -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #E37E26;">Collaboration &
+                            Teamwork</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            We believe in the power of teamwork, within our organization and with our partners and
+                            clients. Collaboration is the key to success in delivering integrated, end-to-end solutions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Accountability -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #2ECC71;">Accountability</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            We take full responsibility for the quality of our work and the success of our projects,
+                            ensuring every task is executed with precision and care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 border-0 bg-light">
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold mb-3" style="font-size: 18px; color: #2ECC71;">Agility &
+                            Responsiveness</h5>
+                        <p class="card-text" style="font-size: 15px; color: #555; line-height: 1.6;">
+                            We understand that technology and threats evolve rapidly. Our team is trained to adapt
+                            quickly and deliver fast, effective responses without compromising quality.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Who we are Section -->
+    <div class="section-badge justify-content-center">
+        <span class="badge-circle" id="about-badge-circle"></span>
+        <h2 class="section-title">Who We are</h2>
+    </div>
+    <section class="">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Content Column -->
+                <div class="col-lg-6">
+                    <div class="work-content">
+                        <div class="section-badge mb-5">
+                            <!-- <span class="badge-circle" id="work-badge-circle"></span>
+                            <h2 class="section-title">Our Mission</h2> -->
+                        </div>
+
+                        <div class="work-description">
+                            <h5>OUR ORIGIN</h5>
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">GCS took its
+                                launch from its Chicago office in 2004, providing BPO services to clients in the state.
+                                Another office was established soon after in Orlando to cater to the increasing demand
+                                for our services. In a very short time, the coverage expanded to the entire country with
+                                services ranging from security & surveillance to state-of-the-art call center
+                                applications and Telco grade IP-PBX and messaging solutions.</p>
+
+                            <h5>EXPANSION TO PAKISTAN</h5>
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                With the increasing demand for related services in Pakistan given the nature of security
+                                conditions of the country, it was deemed necessary to expand our footprint to Pakistan
+                                in
+                                2007, and the initiation with one of our flagship projects — Citywide Surveillance -
+                                Karachi.
+                            </p>
+
+                            <h5>OUR GROWTH</h5>
+                            <p style="font-size: 16px; line-height: 1.6; color: #555; margin-bottom: 20px;">
+                                Over the coming years, GCS has become known as a leading provider of ICT integrations,
+                                diverse technology solutions, and services in Pakistan. Our goal is to help our clients
+                                stay ahead of the curve and stay competitive in today's fast-paced, digital world.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Visual Column -->
+                <div class="col-lg-6">
+                    <div class="work-visuals">
+                        <div style="width: 100%; height: 100%; display: flex; justify-content: center;">
+                            <img src="../assets/images/about-us-img-sec.png" alt="Technology Visual" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-10">
+                <div class="mb-4 mt-3">
+                    <h2 class="fw-bold" style="font-size: 28px; color: #333;">WHAT WE OFFER</h2>
+                </div>
+
+                <p class=" mb-4" style="font-size: 16px; color: #555;">
+                    We offer range of services including and not limited to:
+                </p>
+
+                <div class="rounded-3">
+                    <div class="row g-3">
+                        <!-- Row 1 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Security And Surveillance Solutions</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Data Center Solutions</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Enterprise Applications</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Virtualization Solutions</span>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Smart City Solutions</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">AI Solutions</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                            <div class="d-flex align-items-center h-100">
+                                <span class="me-2" style="color: #C94050; font-size: 18px;">✓</span>
+                                <span style="font-size: 15px; color: #333;">Infrastructure Services</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" style="background-image: url('../assets/images/stats\ back-aboutus.png'); 
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    padding: 80px 0;">
+        <div class="container">
+            <div class="row" style="align-items: center;">
+                <!-- Sites Deployed -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item text-center">
+                        <div class="mb-3 svg-image">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="none" />
+                                <path
+                                    d="M32.0002 16.5489C26.7351 16.5489 22.4746 23.4512 22.4746 31.9907C22.4746 40.5302 26.7351 47.4419 32.0002 47.4419C32.0281 44.7349 32.056 40.5302 32.056 31.9907C32.056 23.4512 32.0281 21.414 32.0002 16.5396"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="13.284" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M32 47.4419C37.4325 47.4419 41.8326 40.5302 41.8326 31.9907C41.8326 23.4512 37.4325 16.5488 32 16.5488M16.5488 32H47.4419"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="13.284" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M41.9916 20.2139C39.3033 21.6185 35.8149 22.4743 32.0102 22.4743C28.2056 22.4743 24.7172 21.6278 22.0195 20.2139M22.0195 43.786C24.7079 42.3813 28.1963 41.5255 32.0009 41.5255C35.8056 41.5255 39.294 42.372 41.9916 43.786"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="13.284" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M47.4516 32C47.4516 40.5302 40.54 47.4511 32.0005 47.4511C23.4609 47.4511 16.5586 40.5302 16.5586 32C16.5586 23.4697 23.4702 16.5581 32.0005 16.5581C40.5307 16.5581 47.4516 23.4697 47.4516 32Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="13.284" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number text-white">10000+</h3>
+                            <p class="stat-label text-white">Sites Deployed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Satisfied Enterprise Clients -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item text-center">
+                        <div class="mb-3 svg-image">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="none" />
+                                <path
+                                    d="M17.0703 43.6671C17.0703 37.741 21.8743 32.937 27.8004 32.937H36.1979C42.124 32.937 46.9281 37.741 46.9281 43.6671V45.9998H17.0703V43.6671Z"
+                                    stroke="white" stroke-width="2" stroke-linejoin="round" />
+                                <path
+                                    d="M37.3646 18.1699C38.3841 19.3872 38.9978 20.9611 38.9978 22.6734C38.9978 26.5436 35.8601 29.6714 31.9999 29.6714C28.1396 29.6714 25.002 26.5337 25.002 22.6734C25.002 18.8132 28.1396 15.6755 31.9999 15.6755C34.1576 15.6755 36.0779 16.6455 37.3646 18.1699Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="27.88" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number text-white">1710+</h3>
+                            <p class="stat-label text-white">Satisfied Enterprise Clients</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Human Resources -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <div class="stat-item text-center">
+                        <div class="mb-3 svg-image">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="none" />
+                                <path
+                                    d="M35.42 34.4418V32.4883M39.3269 34.4418V30.5348M28.5828 34.4418V32.4883M24.6758 34.4418V30.5348M40.7921 19.7906C42.4104 19.7906 43.7223 18.4788 43.7223 16.8604C43.7223 15.2421 42.4104 13.9302 40.7921 13.9302C39.1737 13.9302 37.8618 15.2421 37.8618 16.8604C37.8618 18.4788 39.1737 19.7906 40.7921 19.7906Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M34.9316 26.6278C34.9316 24.2003 36.8995 22.2324 39.327 22.2324H42.2572C44.6847 22.2324 46.6526 24.2003 46.6526 26.6278V28.0929H34.9316V26.6278Z"
+                                    stroke="white" stroke-width="2" stroke-linejoin="round" />
+                                <path
+                                    d="M23.2095 19.7906C24.8279 19.7906 26.1398 18.4788 26.1398 16.8604C26.1398 15.2421 24.8279 13.9302 23.2095 13.9302C21.5912 13.9302 20.2793 15.2421 20.2793 16.8604C20.2793 18.4788 21.5912 19.7906 23.2095 19.7906Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M17.3496 26.6278C17.3496 24.2003 19.3175 22.2324 21.745 22.2324H24.6752C27.1027 22.2324 29.0705 24.2003 29.0705 26.6278V28.0929H17.3496V26.6278Z"
+                                    stroke="white" stroke-width="2" stroke-linejoin="round" />
+                                <path d="M24.6758 40.7905H28.5828M35.42 40.7905H39.3269" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M28.5828 37.3721H24.6758V43.2325C24.6758 47.2783 27.9556 50.5581 32.0014 50.5581C36.0471 50.5581 39.3269 47.2783 39.3269 43.2325V37.3721H35.42V43.2325C35.42 45.1206 33.8894 46.6511 32.0014 46.6511C30.1133 46.6511 28.5828 45.1206 28.5828 43.2325V37.3721Z"
+                                    stroke="white" stroke-width="2" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number text-white">1710+</h3>
+                            <p class="stat-label text-white">Human Resources</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High-Value Projects -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-item text-center">
+                        <div class="mb-3 svg-image">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="64" height="64" rx="16" fill="none" />
+                                <path
+                                    d="M37.8517 24.2249L30.9824 27.7434M37.8517 39.7747L30.9862 36.2582M43.8215 27.8731C47.5251 27.8731 50.5273 24.8708 50.5273 21.1673C50.5273 17.4638 47.5251 14.4614 43.8215 14.4614C40.1179 14.4614 37.1156 17.4638 37.1156 21.1673C37.1156 24.8708 40.1179 27.8731 43.8215 27.8731Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M42.0034 23.7482L44.2861 23.7676C44.9843 23.773 45.5736 23.1963 45.5757 22.4809C45.5778 21.767 44.9938 21.1869 44.2726 21.1869H43.272C42.5501 21.1869 41.9648 20.6075 41.9648 19.8929C41.9648 19.1782 42.5501 18.5996 43.272 18.5996H45.2977M43.7706 24.7783V23.763M43.7706 18.6002V17.5566"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M22.1563 41.8006C27.5692 41.8006 31.9572 37.4126 31.9572 31.9998C31.9572 26.5869 27.5692 22.2505 22.1563 22.2505C16.7435 22.2505 12.3555 26.5869 12.3555 31.9998C12.3555 37.4126 16.7435 41.8006 22.1563 41.8006Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M25.7668 28.3891L18.5451 35.6108M24.9931 36.1267C25.7053 36.1267 26.2827 35.5493 26.2827 34.8371C26.2827 34.1248 25.7053 33.5475 24.9931 33.5475C24.2808 33.5475 23.7035 34.1248 23.7035 34.8371C23.7035 35.5493 24.2808 36.1267 24.9931 36.1267ZM19.3189 30.4525C20.0311 30.4525 20.6085 29.8751 20.6085 29.1629C20.6085 28.4506 20.0311 27.8733 19.3189 27.8733C18.6066 27.8733 18.0293 28.4506 18.0293 29.1629C18.0293 29.8751 18.6066 30.4525 19.3189 30.4525Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M43.8211 49.5382C47.5246 49.5382 50.5269 46.5358 50.5269 42.8323C50.5269 39.1287 47.5246 36.1265 43.8211 36.1265C40.1175 36.1265 37.1152 39.1287 37.1152 42.8323C37.1152 46.5359 40.1175 49.5382 43.8211 49.5382Z"
+                                    stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path
+                                    d="M42.0034 45.4132L44.2861 45.4326C44.9843 45.438 45.5736 44.8613 45.5757 44.1459C45.5778 43.432 44.9938 42.8519 44.2726 42.8519H43.272C42.5501 42.8519 41.9648 42.2725 41.9648 41.5579C41.9648 40.8433 42.5501 40.2645 43.272 40.2645H45.2977M43.7706 46.4434V45.428M43.7706 40.2652V39.2217"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                        <div class="">
+                            <h3 class="stat-number text-white">10 Billion+</h3>
+                            <p class="stat-label text-white">High-Value Projects Delivered & In-Hand</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Our Clients Section -->
+    <section class="clients-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <div class="section-badge">
+                        <span class="badge-circle" id="clients-badge-circle"></span>
+                        <h2 class="section-title">Our Clients</h2>
+                    </div>
+                    <div class="section-subtitle">
+                        <p class="subtitle-gray">MORE THAN CUSTOMERS</p>
+                        <h3 class="subtitle-red">LONG-TERM PARTNERS IN TRANSFORMATION</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row client-row">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_1.png" alt="NIA">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_2.png" alt="Standard Chartered">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_3.png" alt="National Bank of Pakistan">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_4.png" alt="Government of Punjab">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_5.png" alt="Punjab Police">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_6.png" alt="Civil Aviation Authority">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_7.png" alt="Federal Investigation Agency">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_8.png" alt="Government of Sindh">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_9.png" alt="K-Electric">
+                            </div>
+                        </div>
+                        <div class="client-col px-2">
+                            <div class="client-logo">
+                                <img src="../assets/images/client/client_10.png" alt="Gul Ahmed">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta-section" class="cta-section-service">
+        <!-- Video Background -->
+        <div class="video-background">
+            <img src="../assets/images/Rectangle 112.png" style="width: 100%;">
+            <!-- <img src="../assets/images/Rectangle 112.png"> -->
+            <!-- <source src="assets/videos/planning something.mp4" type="video/mp4"> -->
+            <div class="video-overlay"></div>
+        </div>
+        <!-- <div class="image-background">
+                <img src="../assets/images/Rectangle 112.png">
+
+                <div class="image-overlay"></div>
+            </div> -->
+        <!-- CTA Content -->
+        <div class="container">
+            <div class="row min-vh-55 align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="cta-content">
+                        <div id="badge-title-div">
+                            <h2 class="cta-title text-center">
+                                <span id="typewriter" class="typewriter">
+                                    <span class="badge-circle" id="cta-badge-circle">
+                                    </span>
+                                </span>
+                            </h2>
+                        </div>
+                        <div>
+                            <!-- <p class="cta-subtitle">
+                                <span class="word-animate">WE'RE</span>
+                                <span class="word-animate">READY</span>
+                                <span class="word-animate">TO</span>
+                                <span class="word-animate">BUILD</span>
+                                <span class="word-animate">WITH</span>
+                                <span class="word-animate">YOU</span>
+                            </p> -->
+                        </div>
+                        <div class="cta-actions">
+                            <a href="#" class="btn btn-outline-white">
+                                Get In Touch <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <!-- Logo Section (First Line) -->
+            <div class="footer-logo-section">
+                <img src="../assets/images/GCS-logo.png" alt="GCS Logo" class="footer-logo">
+            </div>
+
+            <!-- Footer Content Columns (Second Line) -->
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-company">
+                    <h5 class="footer-title">Head Office</h5>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/loc.svg" alt="Location Icon" class="contact-icon">
+                            <span>J-47 Block 6, PECHS Razi Road, Karachi, Pakistan.</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/call.svg" alt="Phone Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2453</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/fax.svg" alt="Fax Icon" class="contact-icon">
+                            <span>+92 (21) 3431-2454</span>
+                        </div>
+                        <div class="contact-item">
+                            <img src="../assets/images/footer-icon/email.svg" alt="Email Icon" class="contact-icon">
+                            <span>contact-us@gcspvt.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Offices -->
+                <div class="footer-offices">
+                    <h5 class="footer-title">Other Offices</h5>
+                    <ul class="footer-links">
+                        <li><a href="#" class="has-arrow">Lahore Office</a></li>
+                        <li><a href="#" class="has-arrow">Islamabad Office</a></li>
+                        <li><a href="#" class="has-arrow">Peshawar Office</a></li>
+                        <li><a href="#" class="has-arrow">Quetta Office</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-quick-links">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Services & Solutions</a></li>
+                        <li><a href="#">Software & Consultancy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">About GCS</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us & Newsletter -->
+                <div class="footer-social-newsletter">
+                    <h5 class="newsletter-section-title">Subscribe To Our Newsletter</h5>
+                    <form class="footer-newsletter">
+                        <input type="email" class="footer-newsletter-input" placeholder="your email address here"
+                            required>
+                        <button class="footer-newsletter-btn" id="footer-newsletter-btn"
+                            type="submit">Subscribe</button>
+                    </form>
+                    <h5 class="footer-title">Follow Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/fb.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/twitter.svg" alt="Twitter" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/youtube.svg" alt="YouTube" class="social-icon">
+                        </a>
+                        <a href="#" class="">
+                            <img src="../assets/images/social-icon/linkedin.svg" alt="LinkedIn" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 GCS Pvt. Ltd. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <svg class="progress-ring">
+            <circle class="progress-ring__circle"></circle>
+            <circle class="progress-ring__progress" id="progressCircle"></circle>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="white" class="bi bi-arrow-up-short"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
+        </svg>
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebarLinks = document.querySelectorAll('.services-list a');
+
+            sidebarLinks.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault(); // prevent page reload
+                    sidebarLinks.forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

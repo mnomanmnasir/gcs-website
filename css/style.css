@@ -917,6 +917,20 @@ html {
     z-index: -1;
 }
 
+.contact-badge-circle {
+    position: absolute;
+    width: 76px;
+    height: 73px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
 #service-surveillions .badge-circle-service {
     position: absolute;
     margin-left: 10%;
@@ -2083,7 +2097,16 @@ svg * {
     object-fit: contain;
 }
 
+
 /* CTA Section */
+.cta-section {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
 .cta-section-service {
     position: relative;
     height: 369px;
@@ -2498,6 +2521,12 @@ svg * {
     left: -45px;
     top: -15px;
     position: absolute !important;
+}
+
+#contact-badge-circle {
+    left: -39px;
+    top: -15px;
+    position: absolute !important;
 
 }
 
@@ -2725,7 +2754,7 @@ svg * {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
 
 }
 
@@ -4062,23 +4091,24 @@ body.sidebar-open {
 .smart-surveillance {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-top: 7%;
 }
 
 #heroSection {
-    /* position: relative; */
-    height: 50vh;
-    /* Full screen height */
     overflow: hidden;
 }
 
 /* Mobile First Approach - Base Mobile Styles */
 @media (max-width: 768px) {
-    .smart-surveillance {
+   .smart-surveillance {
         font-size: 1.8rem;
-        /* margin-top: 5px; */
-        /* margin-top: 25%; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding-top: 18%;
+    }
+    #heroSection {
+        height: 60vh;
+        overflow: hidden;
     }
 
     /* Global Mobile Adjustments */
@@ -5537,12 +5567,13 @@ body.sidebar-open {
 
 
 /* Smart Surveillance Section */
-.services-container {
-    max-width: 1200px;
+submit-btn .services-container {
+    max-width: 1400px;
     margin: 0 auto;
     padding: 30px;
     background: white;
     border-radius: 8px;
+    background-image: url('../assets/images/back-line.png');
     /* box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05); */
 }
 
@@ -5871,4 +5902,264 @@ body.sidebar-open {
 
 .search-bar button:hover {
     background: #c0392b;
+}
+
+
+/* Contact Section */
+.contact-section {
+    /* max-width: 1200px; */
+    /* margin: 40px auto; */
+    /* padding: 0 20px; */
+    background-image: url('../assets/images/back-line.png');
+    /* max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px; */
+    /* background: white; */
+    border-radius: 8px;
+
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    /* padding: 0 20px; */
+}
+
+.map-wrapper {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.red-line {
+    border: 1px solid #C94050;
+    height: 1px;
+    background-color: #BF3646;
+    /* Red color */
+    margin: 10px 0;
+    /* Adjust spacing as needed */
+    width: 100%;
+    /* Full width */
+}
+
+.office-card {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 15px;
+    background-repeat: no-repeat;
+    background-position: right 20px bottom 20px;
+    /* 20px from right and bottom */
+    position: relative;
+    min-height: 180px;
+    /* Ensures consistent height for all cards */
+}
+
+/* Lahore Office */
+.office-card.lahore {
+    background-image: url('../assets/images/Layer_1.png');
+}
+
+/* Islamabad Office */
+.office-card.islamabad {
+    background-image: url('../assets/images/islamabad-office-image-card.png');
+}
+
+/* Peshawar Office */
+.office-card.peshawar {
+    background-image: url('../assets/images/peshawar-image.png');
+}
+
+/* Quetta Office */
+.office-card.quetta {
+    background-image: url('../assets/images/quetta-office.png');
+}
+
+.offices-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    margin-top: -5%;
+    /* background-color: #fff; */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+    /* max-width: 1400px;
+            margin: 0 auto; */
+    padding: 55px;
+    /* background: white; */
+    border-radius: 8px;
+}
+
+.offices-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 2%;
+}
+
+.contact-container {
+    /* background-color: #fff; */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); */
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 1400px;
+            margin: 0 auto; */
+    padding: 55px;
+    /* background: white; */
+    border-radius: 8px;
+    background-image: url('../assets/images/back-line.png');
+
+}
+
+/* Left Side - Contact Info */
+.contact-info-side {
+    flex: 1;
+    min-width: 350px;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.contact-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.contact-header p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.benefits-list {
+    margin-bottom: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.benefit-item:before {
+    content: "✓";
+    margin-right: 10px;
+    color: #C94050;
+    font-size: 16px;
+}
+
+.office-info {
+    margin-top: 30px;
+}
+
+.office-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+}
+
+.office-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.5;
+}
+
+.office-info p:before {
+    content: "-";
+    position: absolute;
+    left: 0;
+}
+
+/* Right Side - Contact Form */
+.contact-form-side {
+    flex: 1;
+    min-width: 350px;
+    padding: 40px;
+    background-color: #f8f9fa;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #C94050;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #d83a4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info-side,
+    .contact-form-side {
+        padding: 30px;
+    }
+
+    .offices-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info-side,
+    .contact-form-side {
+        padding: 30px;
+    }
+
+    /* Hide circle on mobile */
+    .contact-badge-circle {
+        display: none;
+    }
+
+    .contact-container {
+        padding: 0px;
+    }
 }

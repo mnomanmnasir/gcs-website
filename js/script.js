@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initializeVideo();
     initializeHeaderLogo();
     initializeBackToTop();
-    initializeHeaderLogoService()
 });
 
 // Load all HTML sections
@@ -95,7 +94,7 @@ function initializeMenu() {
     const menuData = {
         home: [],
         about: [
-            { text: 'About Us', url: '/pages/about-us.html' },
+            { text: 'About Us', url: '#about' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
             { text: 'Gallery', url: '#gallery' },
@@ -103,7 +102,7 @@ function initializeMenu() {
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
         services: [
-            { text: 'SMART SURVEILLANCE', url: '/pages/smart-surveillance.html' },
+            { text: 'SMART SURVEILLANCE', url: './smart-surveillance.html' },
             { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '#its' },
             { text: 'SMART CITY', url: '#smart-city' },
             { text: 'INTERNET OF THINGS', url: '#iot' },
@@ -134,6 +133,7 @@ function initializeMenu() {
             { text: 'AI-Based Attendance Management', url: '#ai-based-attendance-management' },
             { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
         ],
+
     };
 
     // Get elements
@@ -1934,18 +1934,39 @@ function hideNewsletter() {
 }
 
 var i = 0;
-var txt = 'PLANNING SOMETHING BIG?';
+var txt = '';
 var speed = 70;
 var started = false;
 
+
+// if (window.location.pathname.includes('/pages/smart-surveillance.html')) {
+//     txt = 'Let’s Talk About Making  <br> Your Spaces More Secure.';
+// } else {
+//     txt = 'PLANNING SOMETHING BIG?';
+// }
+
+// Conditional text based on route
+if (window.location.pathname.includes('/pages/smart-surveillance.html')) {
+    txt = 'Let’s Talk About Making <br> Your Spaces More Secure.';
+} else if (window.location.pathname.includes('/pages/about-Us.html')) {
+   txt = 'Let’s Talk About Making <br> Your Spaces More Secure.';;
+} else {
+    txt = 'PLANNING SOMETHING BIG?';
+}
+
 function typeWriter(callback) {
     if (i < txt.length) {
-        document.getElementById("typewriter").innerHTML += txt.charAt(i);
-        i++;
+        if (txt.substring(i, i + 4) === '<br>') {
+            document.getElementById("typewriter").innerHTML += '<br>';
+            i += 4; // skip "<br>"
+        } else {
+            document.getElementById("typewriter").innerHTML += txt.charAt(i);
+            i++;
+        }
         setTimeout(() => typeWriter(callback), speed);
     } else {
         if (typeof callback === 'function') {
-            callback(); // Call after typing is done
+            callback();
         }
     }
 }
@@ -1959,52 +1980,11 @@ const observer = new IntersectionObserver((entries, observer) => {
                     el.classList.add("word-animate-animation")
                 );
             });
-            observer.unobserve(entry.target); // Optional
+            observer.unobserve(entry.target);
         }
     });
-}, { threshold: 0.8 }); // Adjust threshold for when to trigger (80% visibility)
+}, { threshold: 0.8 });
 
-
-
-        var i = 0;
-        var txt = "Let's Talk About Making Your<br>Spaces More Secure";
-        var speed = 70;
-        var started = false;
-
-        function typeWriter(callback) {
-            if (i < txt.length) {
-                // Handle <br> tags specially
-                if (txt.substr(i, 4) === '<br>') {
-                    document.getElementById("typewriter").innerHTML += '<br>';
-                    i += 4;
-                } else {
-                    document.getElementById("typewriter").innerHTML += txt.charAt(i);
-                    i++;
-                }
-                setTimeout(() => typeWriter(callback), speed);
-            } else {
-                if (typeof callback === 'function') {
-                    callback();
-                }
-            }
-        }
-
-        const service = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !started) {
-                    started = true;
-                    typeWriter(() => {
-                        document.querySelectorAll(".word-animate").forEach(el =>
-                            el.classList.add("word-animate-animation")
-                        );
-                    });
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        // Observe the container
-        service.observe(document.getElementById("typewriter-container"));
 
 function showNewsletterPopup() {
     document.getElementById("black-overlay-div").style.opacity = "1";
@@ -2022,14 +2002,16 @@ function hideNewsletterPopup() {
 
 
 function initializeHeaderLogo() {
-    // Get DOM elements
     const header = document.querySelector('.header-section');
     const logoImg = document.getElementById('logoImg');
-    const heroSection = document.getElementById('heroSection'); // Add this ID to your hero section
+    const heroSection = document.getElementById('heroSection');
+
+    // Detect relative path
+    const basePath = window.location.pathname.includes('/pages/') ? '../assets/images/' : 'assets/images/';
 
     // Logo paths
-    const originalLogo = 'assets/images/GCS-logo.webp';
-    const scrolledLogo = 'assets/images/GCS-LOGO-VECTOR.webp';
+    const originalLogo = basePath + 'GCS-logo.webp';
+    const scrolledLogo = basePath + 'GCS-LOGO-VECTOR.webp';
 
     let ticking = false;
 
@@ -2038,7 +2020,6 @@ function initializeHeaderLogo() {
         const heroHeight = heroSection.offsetHeight;
         const heroBottom = heroSection.offsetTop + heroHeight;
 
-        // Change header when user scrolls past the hero section
         if (scrollPosition >= heroBottom) {
             header.classList.add('scrolled');
             logoImg.src = scrolledLogo;
@@ -2046,7 +2027,6 @@ function initializeHeaderLogo() {
             header.classList.remove('scrolled');
             logoImg.src = originalLogo;
         }
-
         ticking = false;
     }
 
@@ -2057,7 +2037,6 @@ function initializeHeaderLogo() {
         }
     });
 
-    // Handle window resize (in case hero section height changes)
     window.addEventListener('resize', function () {
         if (!ticking) {
             requestAnimationFrame(updateHeader);
@@ -2065,57 +2044,10 @@ function initializeHeaderLogo() {
         }
     });
 
-    // Initial check
     updateHeader();
 }
 
-function initializeHeaderLogoService() {
-    // Get DOM elements
-    const header = document.querySelector('.header-section');
-    const logoImg = document.getElementById('logoImg');
-    const heroSection = document.getElementById('heroSection'); // Add this ID to your hero section
 
-    // Logo paths
-    const originalLogo = '../assets/images/GCS-logo.webp';
-    const scrolledLogo = '../assets/images/GCS-LOGO-VECTOR.webp';
-
-    let ticking = false;
-
-    function updateHeader() {
-        const scrollPosition = window.scrollY;
-        const heroHeight = heroSection.offsetHeight;
-        const heroBottom = heroSection.offsetTop + heroHeight;
-
-        // Change header when user scrolls past the hero section
-        if (scrollPosition >= heroBottom) {
-            header.classList.add('scrolled');
-            logoImg.src = scrolledLogo;
-        } else {
-            header.classList.remove('scrolled');
-            logoImg.src = originalLogo;
-        }
-
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', function () {
-        if (!ticking) {
-            requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    });
-
-    // Handle window resize (in case hero section height changes)
-    window.addEventListener('resize', function () {
-        if (!ticking) {
-            requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    });
-
-    // Initial check
-    updateHeader();
-}
 // Back to Top Button
 function initializeBackToTop() {
     console.log('🚀 Initializing Back to Top...');
@@ -2527,19 +2459,5 @@ document.addEventListener('DOMContentLoaded', function () {
             swiperElement.addEventListener('mouseleave', () => swiper.autoplay.start());
         }
     });
-});
-
-
-// Active tab Smart Surveillance (Sidebar)
-document.addEventListener("DOMContentLoaded", function () {
-    const sidebarLinks = document.querySelectorAll('.services-list a');
-
-    sidebarLinks.forEach(item => {
-        item.addEventListener('click', function (e) {
-            e.preventDefault(); // prevent page reload
-            sidebarLinks.forEach(link => link.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-});
+});         
 
