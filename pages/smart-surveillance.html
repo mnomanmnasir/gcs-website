@@ -206,16 +206,16 @@
                             <!-- <span class="badge-circle-service" id="service-badge-circle"></span> -->
                         </div>
                         <ul>
-                            <li><a href="#" class="active">Smart Surveillance <span>→</span></a></li>
-                            <li><a href="#">Intelligent Transportation System <span>→</span></a></li>
+                            <li><a href="smart-surveillance.html">Smart Surveillance <span>→</span></a></li>
+                            <li><a href="intelligent-transport.html">Intelligent Transportation System <span>→</span></a></li>
                             <li><a href="#">Smart City <span>→</span></a></li>
-                            <li><a href="#">Internet Of Things <span>→</span></a></li>
-                            <li><a href="#">Cybersecurity <span>→</span></a></li>
+                            <li><a href="iot.html">Internet Of Things <span>→</span></a></li>
+                            <li><a href="cyberSecurity.html">Cybersecurity <span>→</span></a></li>
                             <li><a href="#">GIS <span>→</span></a></li>
-                            <li><a href="#">Cloud Services <span>→</span></a></li>
-                            <li><a href="#">Data Center <span>→</span></a></li>
-                            <li><a href="#">Infrastructure <span>→</span></a></li>
-                            <li><a href="#">Fiber Optic <span>→</span></a></li>
+                            <li><a href="cloudServices.html">Cloud Services <span>→</span></a></li>
+                            <li><a href="data-center.html">Data Center <span>→</span></a></li>
+                            <li><a href="infrastructure.html">Infrastructure <span>→</span></a></li>
+                            <li><a href="fibre-optics.html">Fiber Optic <span>→</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -661,15 +661,17 @@
     </button>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+       document.addEventListener("DOMContentLoaded", function () {
             const sidebarLinks = document.querySelectorAll('.services-list a');
+            const currentPage = window.location.pathname.split('/').pop(); // current page file name
 
-            sidebarLinks.forEach(item => {
-                item.addEventListener('click', function (e) {
-                    e.preventDefault(); // prevent page reload
-                    sidebarLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
-                });
+            // Active class set based on current URL
+            sidebarLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
         });
     </script>
