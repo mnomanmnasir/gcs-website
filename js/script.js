@@ -103,25 +103,25 @@ function initializeMenu() {
         ],
         services: [
             { text: 'SMART SURVEILLANCE', url: './smart-surveillance.html' },
-            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '#its' },
+            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: './intelligent-transport.html' },
             { text: 'SMART CITY', url: '#smart-city' },
-            { text: 'INTERNET OF THINGS', url: '#iot' },
-            { text: 'CYBERSECURITY', url: '#cybersecurity' },
+            { text: 'INTERNET OF THINGS', url: './iot.html' },
+            { text: 'CYBERSECURITY', url: './cyberSecurity.html' },
             { text: 'GIS', url: '#gis' },
-            { text: 'CLOUD SERVICES', url: '#cloud' },
-            { text: 'DATA CENTER', url: '#datacenter' },
-            { text: 'INFRASTRUCTURE', url: '#infrastructure' },
-            { text: 'FIBER OPTIC', url: '#fiber' }
+            { text: 'CLOUD SERVICES', url: './cloudServices.html' },
+            { text: 'DATA CENTER', url: './data-center' },
+            { text: 'INFRASTRUCTURE', url: './infrastructure' },
+            { text: 'FIBER OPTIC', url: './fibre-optics.html' }
         ],
         software: [
-            { text: 'Enterprise Applications', url: '#enterprise-applications' },
-            { text: 'Track & Trace', url: '#track-trace' },
-            { text: 'ARtificail Intellignece', url: '#ai' },
-            { text: 'Fintech', url: '#fintech' },
-            { text: 'Analytics', url: '#analytics' },
-            { text: 'CRM', url: '#crm' },
-            { text: 'ERP', url: '#erp' },
-            { text: 'Access Control', url: '#access-control' }
+            { text: 'Enterprise Applications', url: './enterprise.html' },
+            { text: 'Track & Trace', url: './trade-and-trace.html' },
+            { text: 'ARtificail Intellignece', url: './artifical-intelligance.html' },
+            { text: 'Fintech', url: './fintech.html' },
+            { text: 'Analytics', url: './analytics-power-bi.html' },
+            { text: 'CRM', url: './crm.html' },
+            { text: 'ERP', url: '' },
+            { text: 'Access Control', url: './access-control.html' }
         ],
         products: [
             { text: 'AI-Powered Smart e-Challan System', url: '#ai-powered-smart-e-challan-system' },
@@ -133,7 +133,12 @@ function initializeMenu() {
             { text: 'AI-Based Attendance Management', url: '#ai-based-attendance-management' },
             { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
         ],
-
+        career: [
+            { text: 'Career', url: './career.html' }
+        ],
+        contact: [
+            { text: 'Contact', url: './contactUs.html' }
+        ]
     };
 
     // Get elements
@@ -174,32 +179,54 @@ function initializeMenu() {
         const arrow = item.querySelector('.nav-arrow');
 
         // Add click event handler
+        // item.addEventListener('click', (e) => {
+        //     e.preventDefault();
+
+        //     // Toggle active state
+        //     item.classList.toggle('active');
+
+        //     // Update services menu
+        //     updateServicesMenu(section);
+
+        //     // Rotate arrow
+        //     if (arrow) {
+        //         arrow.classList.toggle('active');
+        //     }
+
+        //     // Close other active items
+        //     navItems.forEach(otherItem => {
+        //         if (otherItem !== item && otherItem.classList.contains('active')) {
+        //             otherItem.classList.remove('active');
+        //             const otherArrow = otherItem.querySelector('.nav-arrow');
+        //             if (otherArrow) {
+        //                 otherArrow.classList.remove('active');
+        //             }
+        //         }
+        //     });
+        // });
         item.addEventListener('click', (e) => {
-            e.preventDefault();
-
-            // Toggle active state
-            item.classList.toggle('active');
-
-            // Update services menu
-            updateServicesMenu(section);
-
-            // Rotate arrow
-            if (arrow) {
-                arrow.classList.toggle('active');
-            }
-
-            // Close other active items
-            navItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    const otherArrow = otherItem.querySelector('.nav-arrow');
-                    if (otherArrow) {
-                        otherArrow.classList.remove('active');
+            const link = item.querySelector('a');
+            const href = link?.getAttribute('href') || '';
+        
+            // Agar link # se start hota hai (anchor) tabhi prevent karo
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                // Toggle active state
+                item.classList.toggle('active');
+                updateServicesMenu(section);
+        
+                if (arrow) arrow.classList.toggle('active');
+        
+                navItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        const otherArrow = otherItem.querySelector('.nav-arrow');
+                        if (otherArrow) otherArrow.classList.remove('active');
                     }
-                }
-            });
+                });
+            }
         });
-
+        
         // Add hover event for desktop
         item.addEventListener('mouseenter', () => {
             if (!item.classList.contains('active')) {
@@ -361,16 +388,16 @@ function initializeMobileSidebar() {
             'Our Business Partners'
         ],
         services: [
-            'SMART SURVEILLANCE',
-            'INTELLIGENT TRANSPORTATION SYSTEM',
-            'SMART CITY',
-            'INTERNET OF THINGS',
-            'CYBERSECURITY',
-            'GIS',
-            'CLOUD SERVICES',
-            'DATA CENTER',
-            'INFRASTRUCTURE',
-            'FIBER OPTIC'
+            { text: 'SMART SURVEILLANCE', url: './smart-surveillance.html' },
+            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: './intelligent-transport.html' },
+            { text: 'SMART CITY', url: '#smart-city' },
+            { text: 'INTERNET OF THINGS', url: './iot.html' },
+            { text: 'CYBERSECURITY', url: './cyberSecurity.html' },
+            { text: 'GIS', url: '#gis' },
+            { text: 'CLOUD SERVICES', url: './cloudServices.html' },
+            { text: 'DATA CENTER', url: './data-center' },
+            { text: 'INFRASTRUCTURE', url: './infrastructure' },
+            { text: 'FIBER OPTIC', url: './fibre-optics.html' }
         ],
         software: [
             'Enterprise Applications',
@@ -391,6 +418,12 @@ function initializeMobileSidebar() {
             'Call Management System',
             'AI-Based Attendance Management',
             'Site Monitoring Solutions'
+        ],
+        career: [
+            { text: 'Career', url: './career.html' }
+        ],
+        contact: [
+            { text: 'Contact', url: './contactUs.html' }
         ]
     };
 
@@ -1296,7 +1329,7 @@ function initializeRotatingText() {
     console.log('Found rotating texts:', rotatingTexts.length);
 
     if (rotatingTexts.length === 0) {
-        console.log('No rotating texts found, retrying in 500ms...');
+        // console.log('No rotating texts found, retrying in 500ms...');
         setTimeout(initializeRotatingText, 500);
         return;
     }
@@ -2004,7 +2037,8 @@ function hideNewsletterPopup() {
 function initializeHeaderLogo() {
     const header = document.querySelector('.header-section');
     const logoImg = document.getElementById('logoImg');
-    const heroSection = document.getElementById('heroSection');
+    // const heroSection = document.getElementById('heroSection');
+    const heroSection = document.getElementById('heroSection') || document.getElementById('image-hero-section');
 
     // Detect relative path
     const basePath = window.location.pathname.includes('/pages/') ? '../assets/images/' : 'assets/images/';
@@ -2055,7 +2089,8 @@ function initializeBackToTop() {
     const backToTopBtn = document.getElementById('backToTop');
     const progressCircle = document.getElementById('progressCircle');
     const heroSection = document.getElementById('heroSection');
-
+    
+    image-hero-section
     console.log('Elements found:', {
         button: !!backToTopBtn,
         progress: !!progressCircle,
