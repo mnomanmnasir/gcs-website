@@ -6305,3 +6305,8 @@ submit-btn .services-container {
         grid-template-columns: 1fr;
     }
 }
+
+.faq-section-service{
+    background-color: #f2f2f2f2;
+    padding: 2rem
+}

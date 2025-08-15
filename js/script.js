@@ -102,9 +102,9 @@ function initializeMenu() {
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
         services: [
-            { text: 'SMART SURVEILLANCE', url: '../pages/smart-surveillance.html' },
+            { text: 'SMART SURVEILLANCE', url: './pages/smart-surveillance.html' },
             { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '../pages/intelligent-transport.html' },
-            { text: 'SMART CITY', url: '../pages/smartCity.html' },
+            { text: 'SMART CITY', url: '#smart-city' },
             { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
             { text: 'CYBERSECURITY', url: '../pages/cyberSecurity.html' },
             { text: 'GIS', url: '#gis' },
@@ -178,32 +178,6 @@ function initializeMenu() {
         const section = item.getAttribute('data-section');
         const arrow = item.querySelector('.nav-arrow');
 
-        // Add click event handler
-        // item.addEventListener('click', (e) => {
-        //     e.preventDefault();
-
-        //     // Toggle active state
-        //     item.classList.toggle('active');
-
-        //     // Update services menu
-        //     updateServicesMenu(section);
-
-        //     // Rotate arrow
-        //     if (arrow) {
-        //         arrow.classList.toggle('active');
-        //     }
-
-        //     // Close other active items
-        //     navItems.forEach(otherItem => {
-        //         if (otherItem !== item && otherItem.classList.contains('active')) {
-        //             otherItem.classList.remove('active');
-        //             const otherArrow = otherItem.querySelector('.nav-arrow');
-        //             if (otherArrow) {
-        //                 otherArrow.classList.remove('active');
-        //             }
-        //         }
-        //     });
-        // });
         item.addEventListener('click', (e) => {
             const link = item.querySelector('a');
             const href = link?.getAttribute('href') || '';
@@ -375,56 +349,53 @@ function initializeMobileSidebar() {
     if (window.innerWidth > 768) return;
 
     const navItems = document.querySelectorAll('.nav-item[data-section]');
-
-    // Your existing menuData from main.js will be used
     const menuData = {
         home: [],
         about: [
-            'About Us',
-            'Projects',
-            'Our Clients',
-            'Gallery',
-            'Events',
-            'Our Business Partners'
+            { text: 'About Us', url: '#about' },
+            { text: 'Projects', url: '#projects' },
+            { text: 'Our Clients', url: '#clients' },
+            { text: 'Gallery', url: '#gallery' },
+            { text: 'Events', url: '#events' },
+            { text: 'Our Business Partners', url: '#business-partners' }
         ],
         services: [
-            'SMART SURVEILLANCE',
-            'INTELLIGENT TRANSPORTATION SYSTEM',
-            'SMART CITY',
-            'INTERNET OF THINGS',
-            'CYBERSECURITY',
-            'GIS',
-            'CLOUD SERVICES',
-            'DATA CENTER',
-            'INFRASTRUCTURE',
-            'FIBER OPTIC'
+            { text: 'SMART SURVEILLANCE', url: './pages/smart-surveillance.html' },
+            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '../pages/intelligent-transport.html' },
+            { text: 'SMART CITY', url: '../pages/smartCity.html' },
+            { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
+            { text: 'CYBERSECURITY', url: '../pages/cyberSecurity.html' },
+            { text: 'GIS', url: '../pages/GIS.html' },
+            { text: 'CLOUD SERVICES', url: '../pages/cloudServices.html' },
+            { text: 'DATA CENTER', url: '../pages/data-center' },
+            { text: 'INFRASTRUCTURE', url: '../pages/infrastructure' },
+            { text: 'FIBER OPTIC', url: '../pages/fibre-optics.html' }
         ],
         software: [
-            'Enterprise Applications',
-            'Track & Trace',
-            'ARtificail Intellignece',
-            'Fintech',
-            'Analytics',
-            'CRM',
-            'ERP',
-            'Access Control'
+            { text: 'Enterprise Applications', url: '../pages/enterprise.html' },
+            { text: 'Track & Trace', url: '../pages/trade-and-trace.html' },
+            { text: 'ARtificail Intellignece', url: '../pages/artifical-intelligance.html' },
+            { text: 'Fintech', url: '../pages/fintech.html' },
+            { text: 'Analytics', url: '../pages/analytics-power-bi.html' },
+            { text: 'CRM', url: '../pages/crm.html' },
+            { text: 'ERP', url: '' },
+            { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
-            'AI-Powered Smart e-Challan System',
-            'Smart Surveillance System',
-            'Safe Cities Solutions',
-            'Smart Cities Development',
-            'Emergency & Response System',
-            'Call Management System',
-            'AI-Based Attendance Management',
-            'Site Monitoring Solutions'
+            { text: 'AI-Powered Smart e-Challan System', url: '#ai-powered-smart-e-challan-system' },
+            { text: 'Smart Surveillance System', url: '#smart-surveillance-system' },
+            { text: 'Safe Cities Solutions', url: '#safe-cities-solutions' },
+            { text: 'Smart Cities Development', url: '#smart-cities-development' },
+            { text: 'Emergency & Response System', url: '#emergency-response-system' },
+            { text: 'Call Management System', url: '#call-management-system' },
+            { text: 'AI-Based Attendance Management', url: '#ai-based-attendance-management' },
+            { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
         ],
-
         career: [
-            { text: 'Career', url: './career.html' }
+            { text: 'Career', url: '../pages/career.html' }
         ],
         contact: [
-            { text: 'Contact', url: './contactUs.html' }
+            { text: 'Contact', url: '../pages/contactUs.html' }
         ]
     };
 
@@ -500,8 +471,8 @@ function createMobileSubmenu(navItem, services) {
     services.forEach(service => {
         const listItem = document.createElement('li');
         const serviceLink = document.createElement('a');
-        serviceLink.href = '#';
-        serviceLink.textContent = service;
+        serviceLink.href = service.url;
+        serviceLink.textContent = service.text;
         serviceLink.addEventListener('click', handleMobileServiceClick);
 
         listItem.appendChild(serviceLink);
@@ -514,13 +485,19 @@ function createMobileSubmenu(navItem, services) {
 
 // Handle mobile menu item clicks
 function handleMobileMenuClick(event) {
-    event.preventDefault();
+    // Only prevent default if clicking on the parent menu item, not on links
+    if (!event.target.closest('a')) {
+        event.preventDefault();
+    }
     event.stopPropagation();
 
     const navItem = event.currentTarget.closest('.nav-item');
     const submenu = navItem.querySelector('.mobile-services-submenu');
 
-    if (!submenu) return;
+    if (!submenu) {
+        // If no submenu, allow default navigation
+        return true;
+    }
 
     // Close other open submenus
     closeMobileSubmenus(navItem);
@@ -551,222 +528,15 @@ function handleMobileMenuClick(event) {
             }
         }, 100);
     }
-}
-
-// Handle mobile service clicks
-function handleMobileServiceClick(event) {
-    event.preventDefault();
-
-    // Remove active class from all service links
-    document.querySelectorAll('.mobile-services-list a').forEach(link => {
-        link.classList.remove('active');
-    });
-
-    // Add active class to clicked service
-    event.currentTarget.classList.add('active');
-
-    // Get service name
-    const serviceName = event.currentTarget.textContent;
-    console.log('Mobile service clicked:', serviceName);
-}
-
-// Close other mobile submenus
-// function initializeMobileSidebar() {
-//     // Only run on mobile devices
-//     if (window.innerWidth > 768) return;
-
-//     console.log('Initializing mobile sidebar...');
-
-//     // Find nav items - try multiple selectors to ensure we find them
-//     let navItems = document.querySelectorAll('.nav-item[data-section]');
-
-//     // If data-section attribute doesn't exist, find nav items by text content
-//     if (navItems.length === 0) {
-//         navItems = document.querySelectorAll('.nav-item');
-//         console.log('Found nav items without data-section:', navItems.length);
-//     }
-
-//     // Your existing menuData from main.js will be used
-//     const menuData = {
-//         'home': [],
-//         'about': [
-//             'Company Profile',
-//             'Projects',
-//             'Our Clients',
-//             'Gallery',
-//             'Events'
-//         ],
-//         'services': [
-//             'SMART SURVEILLANCE',
-//             'INTELLIGENT TRANSPORTATION SYSTEM',
-//             'SMART CITY',
-//             'INTERNET OF THINGS',
-//             'CYBERSECURITY',
-//             'GIS',
-//             'CLOUD SERVICES',
-//             'DATA CENTER',
-//             'INFRASTRUCTURE',
-//             'FIBER OPTIC'
-//         ],
-//         'software': [
-//             'Enterprise Applications',
-//             'Track & Trace',
-//             'ARtificail Intellignece',
-//             'Fintech',
-//             'Analytics',
-//             'CRM',
-//             'ERP',
-//             'Access Control'
-//         ]
-//     };
-
-//     // Remove existing nav-link click handlers that close sidebar
-//     const existingNavLinks = document.querySelectorAll('.nav-link');
-//     existingNavLinks.forEach(link => {
-//         // Clone the element to remove all event listeners
-//         const newLink = link.cloneNode(true);
-//         link.parentNode.replaceChild(newLink, link);
-//     });
-
-//     // Create mobile submenus for each nav item with services
-//     // REPLACE this part in your remaining initializeMobileSidebar function:
-//     navItems.forEach((navItem, index) => {
-//         console.log('Processing nav item:', index, navItem);
-
-//         let section = navItem.getAttribute('data-section');
-
-//         // If no data-section, try to determine section from text content
-//         if (!section) {
-//             const navLink = navItem.querySelector('.nav-link');
-//             if (navLink) {
-//                 const text = navLink.textContent.trim().toLowerCase();
-//                 console.log('Nav link text:', text);
-
-//                 if (text.includes('service')) {
-//                     section = 'services';
-//                     navItem.setAttribute('data-section', 'services');
-//                 } else if (text.includes('software') || text.includes('solution')) {
-//                     section = 'software';
-//                     navItem.setAttribute('data-section', 'software');
-//                 } else if (text.includes('about')) {
-//                     section = 'about';
-//                     navItem.setAttribute('data-section', 'about');
-//                 } else if (text.includes('home')) {
-//                     section = 'home';
-//                     navItem.setAttribute('data-section', 'home');
-//                 }
-
-//                 console.log('Determined section:', section);
-//             }
-//         }
-
-//         const services = menuData[section];
-//         console.log('Services for section', section, ':', services);
-
-//         if (services && services.length > 0) {
-//             // Create mobile submenu if it doesn't exist
-//             if (!navItem.querySelector('.mobile-services-submenu')) {
-//                 console.log('Creating mobile submenu for:', section);
-//                 createMobileSubmenu(navItem, services);
-//             }
-
-//             // Add click handler to the entire nav item area (this makes the + clickable)
-//             navItem.addEventListener('click', handleMobileMenuClick, true);
-
-//             console.log(`✅ Initialized toggle for: ${section}`);
-//         } else {
-//             // For menu items without services, prevent sidebar closing
-//             const navLink = navItem.querySelector('.nav-link');
-//             if (navLink) {
-//                 navLink.addEventListener('click', function (e) {
-//                     e.preventDefault();
-//                     e.stopPropagation();
-//                     e.stopImmediatePropagation();
-//                     console.log('Clicked nav item without services:', navLink.textContent);
-//                     return false;
-//                 }, true);
-//             }
-//         }
-//     });
-
-//     console.log('Mobile sidebar initialization complete');
-// }
-
-// Create mobile submenu
-function createMobileSubmenu(navItem, services) {
-    console.log('Creating mobile submenu with services:', services);
-
-    const submenuContainer = document.createElement('div');
-    submenuContainer.className = 'mobile-services-submenu';
-
-    const servicesList = document.createElement('ul');
-    servicesList.className = 'mobile-services-list';
-
-    services.forEach((service, index) => {
-        console.log('Adding service:', service);
-        const listItem = document.createElement('li');
-        const serviceLink = document.createElement('a');
-        serviceLink.href = '#';
-        serviceLink.textContent = service;
-        serviceLink.addEventListener('click', handleMobileServiceClick);
-
-        listItem.appendChild(serviceLink);
-        servicesList.appendChild(listItem);
-    });
-
-    submenuContainer.appendChild(servicesList);
-    navItem.appendChild(submenuContainer);
-
-    console.log('Mobile submenu created and appended');
-    return submenuContainer;
-}
-
-// Handle mobile menu item clicks
-function handleMobileMenuClick(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-
-    const navItem = event.currentTarget.closest('.nav-item');
-    const submenu = navItem.querySelector('.mobile-services-submenu');
-
-    if (!submenu) return false;
-
-    // Close other submenus
-    closeMobileSubmenus(navItem);
-
-    // Toggle current submenu
-    const isExpanded = navItem.classList.contains('mobile-expanded');
-
-    if (isExpanded) {
-        console.log('Closing submenu');
-        navItem.classList.remove('mobile-expanded');
-        submenu.classList.remove('expanded');
-    } else {
-        console.log('Opening submenu');
-        navItem.classList.add('mobile-expanded');
-        submenu.classList.add('expanded');
-
-        // Scroll into view
-        setTimeout(() => {
-            const submenuRect = submenu.getBoundingClientRect();
-            const sidebarContent = document.querySelector('.sidebar-content');
-            if (sidebarContent && submenuRect.bottom > window.innerHeight) {
-                submenu.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'nearest'
-                });
-            }
-        }, 100);
-    }
-
+    
     return false;
 }
 
 // Handle mobile service clicks
 function handleMobileServiceClick(event) {
-    event.preventDefault();
-
+    // Don't prevent default here, let the link work normally
+    event.stopPropagation();
+    
     // Remove active class from all service links
     document.querySelectorAll('.mobile-services-list a').forEach(link => {
         link.classList.remove('active');
@@ -775,9 +545,30 @@ function handleMobileServiceClick(event) {
     // Add active class to clicked service
     event.currentTarget.classList.add('active');
 
-    // Get service name
+    // Get service name and URL
     const serviceName = event.currentTarget.textContent;
-    console.log('Mobile service clicked:', serviceName);
+    const serviceUrl = event.currentTarget.getAttribute('href');
+    console.log('Mobile service clicked:', serviceName, 'URL:', serviceUrl);
+    
+    // Close the mobile menu after a short delay to allow the click to process
+    setTimeout(() => {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar) {
+            sidebar.classList.remove('active');
+            
+            // If it's an anchor link, scroll to the section
+            if (serviceUrl.startsWith('#')) {
+                const targetId = serviceUrl.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            } else {
+                // For regular links, let the default behavior handle the navigation
+                window.location.href = serviceUrl;
+            }
+        }
+    }, 50); // Reduced delay for better UX
 
 }
 
@@ -2179,188 +1970,6 @@ if (document.readyState === 'loading') {
 // Fallback
 window.addEventListener('load', initializeBackToTop);
 
-// document.addEventListener('DOMContentLoaded', function () {
-
-//     const defaultSwiperConfig = {
-//         spaceBetween: 30,
-//         slidesPerGroup: 1,
-//         autoplay: {
-//             delay: 1000,
-//             disableOnInteraction: false,
-//         },
-//         loop: true,
-//         speed: 1500,
-//         watchSlidesProgress: true,
-//         watchOverflow: true,
-//         allowTouchMove: true,
-//         breakpoints: {
-//             320: {
-//                 slidesPerView: 1,
-//                 spaceBetween: 20
-//             },
-//             640: {
-//                 slidesPerView: 2,
-//                 spaceBetween: 25
-//             },
-//             768: {
-//                 slidesPerView: 3,
-//                 spaceBetween: 30
-//             },
-//             1024: {
-//                 slidesPerView: 4,
-//                 spaceBetween: 30
-//             }
-//         }
-//     };
-
-//     const swipersData = [
-//         {
-//             container: '#blogsSwiper',
-//             prevBtn: '#blogsPrev',
-//             nextBtn: '#blogsNext',
-//             customConfig: {} // Uses default 4 slides at 1024px
-//         },
-//         {
-//             container: '#servicesSwiper',
-//             prevBtn: '#servicesPrev',
-//             nextBtn: '#servicesNext',
-//             customConfig: {} // Uses default 4 slides at 1024px
-//         },
-//         {
-//             container: '#productsSwiper', // ID for the product swiper
-//             prevBtn: '#productsPrev',
-//             nextBtn: '#productsNext',
-//             customConfig: {
-//                 breakpoints: {
-//                     1024: {
-//                         slidesPerView: 3,
-//                         spaceBetween: 30
-//                     }
-//                 }
-//             }
-//         }
-//     ];
-
-//     swipersData.forEach(data => {
-//         const swiperElement = document.querySelector(data.container);
-//         if (swiperElement) {
-//             // Merge default config with custom overrides
-//             const mergedConfig = structuredClone(defaultSwiperConfig);
-//             if (data.customConfig.breakpoints) {
-//                 mergedConfig.breakpoints = {
-//                     ...mergedConfig.breakpoints,
-//                     ...data.customConfig.breakpoints
-//                 };
-//             }
-
-//             const swiper = new Swiper(data.container, mergedConfig);
-
-
-//             document.querySelector(data.prevBtn)?.addEventListener('click', () => swiper.slidePrev());
-//             document.querySelector(data.nextBtn)?.addEventListener('click', () => swiper.slideNext());
-
-//             swiperElement.addEventListener('mouseenter', () => swiper.autoplay.stop());
-//             swiperElement.addEventListener('mouseleave', () => swiper.autoplay.start());
-//         }
-//     });
-// });
-
-
-
-// document.addEventListener('DOMContentLoaded', function () {
-//     const defaultSwiperConfig = {
-//         spaceBetween: 30,
-//         slidesPerGroup: 1,
-//         autoplay: {
-//             delay: 1000,
-//             disableOnInteraction: false,
-//         },
-//         loop: true,
-//         speed: 1000,
-//         watchSlidesProgress: true,
-//         watchOverflow: true,
-//         allowTouchMove: true,
-//         breakpoints: {
-//             320: {
-//                 slidesPerView: 1,
-//                 spaceBetween: 20
-//             },
-//             640: {
-//                 slidesPerView: 2,
-//                 spaceBetween: 25
-//             },
-//             768: {
-//                 slidesPerView: 3,
-//                 spaceBetween: 30
-//             },
-//             1024: {
-//                 slidesPerView: 4,
-//                 spaceBetween: 30
-//             }
-//         }
-//     };
-
-//     const swipersData = [
-//         {
-//             container: '#blogsSwiper',
-//             prevBtn: '#blogsPrev',
-//             nextBtn: '#blogsNext',
-//             customConfig: {
-//                 autoplay: false,
-//             }
-//         },
-//         {
-//             container: '#servicesSwiper',
-//             prevBtn: '#servicesPrev',
-//             nextBtn: '#servicesNext',
-//             customConfig: {
-//                 autoplay: false,
-//             }
-//         },
-//         {
-//             container: '#productsSwiper',
-//             prevBtn: '#productsPrev',
-//             nextBtn: '#productsNext',
-//             customConfig: {
-//                 autoplay: false, // This will now be respected
-//                 breakpoints: {
-//                     1024: {
-//                         slidesPerView: 3,
-//                         spaceBetween: 30
-//                     }
-//                 }
-//             }
-//         }
-//     ];
-
-//     swipersData.forEach(data => {
-//         const swiperElement = document.querySelector(data.container);
-//         if (swiperElement) {
-//             const mergedConfig = structuredClone(defaultSwiperConfig);
-
-//             // Merge all other customConfig keys
-//             Object.assign(mergedConfig, data.customConfig);
-
-//             // Deep merge breakpoints
-//             if (data.customConfig.breakpoints) {
-//                 mergedConfig.breakpoints = {
-//                     ...defaultSwiperConfig.breakpoints,
-//                     ...data.customConfig.breakpoints
-//                 };
-//             }
-
-//             const swiper = new Swiper(data.container, mergedConfig);
-
-//             document.querySelector(data.prevBtn)?.addEventListener('click', () => swiper.slidePrev());
-//             document.querySelector(data.nextBtn)?.addEventListener('click', () => swiper.slideNext());
-
-//             if (mergedConfig.autoplay !== false) {
-//                 swiperElement.addEventListener('mouseenter', () => swiper.autoplay.stop());
-//                 swiperElement.addEventListener('mouseleave', () => swiper.autoplay.start());
-//             }
-//         }
-//     });
-// });
 
 document.addEventListener('DOMContentLoaded', function () {
 
