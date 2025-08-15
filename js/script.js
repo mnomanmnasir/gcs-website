@@ -92,9 +92,11 @@ async function loadSections() {
 function initializeMenu() {
     // Menu data
     const menuData = {
-        home: [],
+        home: [
+            { text: 'Home', url: '../' },
+        ],
         about: [
-            { text: 'About Us', url: '#about' },
+            { text: 'About Us', url: '../pages/about-Us.html' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
             { text: 'Gallery', url: '#gallery' },
@@ -104,7 +106,7 @@ function initializeMenu() {
         services: [
             { text: 'SMART SURVEILLANCE', url: './pages/smart-surveillance.html' },
             { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '../pages/intelligent-transport.html' },
-            { text: 'SMART CITY', url: '#smart-city' },
+            { text: 'SMART CITY', url: '../pages/smartCity.html' },
             { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
             { text: 'CYBERSECURITY', url: '../pages/cyberSecurity.html' },
             { text: 'GIS', url: '#gis' },
@@ -350,9 +352,11 @@ function initializeMobileSidebar() {
 
     const navItems = document.querySelectorAll('.nav-item[data-section]');
     const menuData = {
-        home: [],
+        home: [
+            { text: 'Home', url: '../' },
+        ],
         about: [
-            { text: 'About Us', url: '#about' },
+            { text: 'About Us', url: '../pages/about-Us.html' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
             { text: 'Gallery', url: '#gallery' },
