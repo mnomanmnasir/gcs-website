@@ -15,10 +15,6 @@
         integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-
-
-    </style>
 </head>
 
 <body>
@@ -207,7 +203,8 @@
                         </div>
                         <ul>
                             <li><a href="smart-surveillance.html">Smart Surveillance <span>→</span></a></li>
-                            <li><a href="intelligent-transport.html">Intelligent Transportation System <span>→</span></a></li>
+                            <li><a href="intelligent-transport.html">Intelligent Transportation System
+                                    <span>→</span></a></li>
                             <li><a href="#">Smart City <span>→</span></a></li>
                             <li><a href="iot.html">Internet Of Things <span>→</span></a></li>
                             <li><a href="cyberSecurity.html">Cybersecurity <span>→</span></a></li>
@@ -261,18 +258,24 @@
 
     </section>
 
-    <div class="services-container container" style="margin-top: 5%;">
+    <div class="services-container container">
+        <!-- <div class="section-badge"> -->
+        <h2 class="section-title" style="margin-top:4%;">Our Services at a Glance</h2>
+        <!-- <span class="badge-circle" id="faq-badge-circle"></span> -->
+        <!-- </div> -->
+        <!-- <h2 class="section-title">Our Services at a Glance</h2> -->
+        <!-- <h1>Our Services at a Glance</h1> -->
+        <!-- </div> -->
         <div class="services-grid">
-            <div class="services-header">
-                <h1>Our Services at a Glance</h1>
-            </div>
+            <!-- <div class="services-header"> -->
 
             <!-- Column 1 -->
             <div class="service-category">
                 <ul class="sub-services">
                     <li><span style="color:red">✓ </span>Fiber Intrusion Detection</li>
-                    <br>
-                    <li><span style="color:red">✓ </span> Fire Detection & Alarm <span style="display:inline-block; margin-left:13px;">System</span></li>
+                    
+                    <li><span style="color:red">✓ </span> Fire Detection & Alarm <span
+                            style="display:inline-block; margin-left:13px;">System</span></li>
                     <li><span style="color:red">✓ </span>Road Blocker</li>
                     <li><span style="color:red">✓ </span>Fire Suppression System</li>
                 </ul>
@@ -316,7 +319,8 @@
     </div>
 
     <!-- FAQ Section -->
-    <section class="faq-section-service container mt-5">
+    <section class="faq-section-service mt-5"
+        style="background-image: url('../assets/images/back-line.png');">
         <div class="container">
             <!-- Section Header -->
             <div class="row mb-2">
@@ -510,7 +514,7 @@
 
     <!-- Get in Touch Section -->
     <!-- CTA Section -->
-    <section id="cta-section" class="cta-section-service mt-4">
+    <section id="cta-section" class="cta-section-service" style="margin-top: 5%;">
         <!-- Video Background -->
         <div class="video-background">
             <img src="../assets/images/Rectangle 112.png" style="width: 100%;">
@@ -666,7 +670,7 @@
     </button>
 
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
             const sidebarLinks = document.querySelectorAll('.services-list a');
             const currentPage = window.location.pathname.split('/').pop(); // current page file name
 

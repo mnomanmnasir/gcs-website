@@ -3262,7 +3262,7 @@ svg * {
     gap: 32px;
     align-items: start;
     width: 100%;
-    margin-top: 75px;
+    margin-top: 55px;
 }
 
 .services-column {
@@ -5587,7 +5587,7 @@ submit-btn .services-container {
     /* padding-bottom: 10px; */
 }
 
-.services-header h1 {
+.services-header h2 {
     font-size: 2.2rem;
     color: #2c3e50;
     margin: 0;
@@ -5673,7 +5673,7 @@ submit-btn .services-container {
         width: 100%;
     }
 
-    .services-header h1 {
+    .services-header h2 {
         font-size: 1.8rem;
     }
 }
@@ -5688,7 +5688,7 @@ submit-btn .services-container {
         padding: 20px;
     }
 
-    .services-header h1 {
+    .services-header h2 {
         font-size: 1.5rem;
     }
 }
@@ -6231,4 +6231,27 @@ submit-btn .services-container {
     .hero-text {
         text-align: center;
     }
+}
+
+
+/* Our Service at a glance */
+.sub-services {
+    list-style: none;
+    /* default bullet remove */
+    margin: 0;
+    padding: 0;
+}
+
+.sub-services li {
+    padding-left: 1.8em;
+    /* space for tick */
+    text-indent: -1em;
+    /* pull tick to left */
+    line-height: 1.5;
+}
+
+.tick {
+    color: red;
+    margin-right: 8px;
+    /* gap between tick and text */
 }
