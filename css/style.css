@@ -2109,9 +2109,9 @@ svg * {
 
 .cta-section-service {
     position: relative;
-    height: 369px;
-    display: flex;
-    align-items: center;
+    height: 340px;
+    /* display: flex; */
+    /* align-items: center; */
     overflow: hidden;
     background-size: cover;
 }

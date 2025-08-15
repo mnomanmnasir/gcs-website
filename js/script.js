@@ -102,26 +102,26 @@ function initializeMenu() {
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
         services: [
-            { text: 'SMART SURVEILLANCE', url: './smart-surveillance.html' },
-            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: './intelligent-transport.html' },
+            { text: 'SMART SURVEILLANCE', url: '../pages/smart-surveillance.html' },
+            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '../pages/intelligent-transport.html' },
             { text: 'SMART CITY', url: '#smart-city' },
-            { text: 'INTERNET OF THINGS', url: './iot.html' },
-            { text: 'CYBERSECURITY', url: './cyberSecurity.html' },
+            { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
+            { text: 'CYBERSECURITY', url: '../pages/cyberSecurity.html' },
             { text: 'GIS', url: '#gis' },
-            { text: 'CLOUD SERVICES', url: './cloudServices.html' },
-            { text: 'DATA CENTER', url: './data-center' },
-            { text: 'INFRASTRUCTURE', url: './infrastructure' },
-            { text: 'FIBER OPTIC', url: './fibre-optics.html' }
+            { text: 'CLOUD SERVICES', url: '../pages/cloudServices.html' },
+            { text: 'DATA CENTER', url: '../pages/data-center' },
+            { text: 'INFRASTRUCTURE', url: '../pages/infrastructure' },
+            { text: 'FIBER OPTIC', url: '../pages/fibre-optics.html' }
         ],
         software: [
-            { text: 'Enterprise Applications', url: './enterprise.html' },
-            { text: 'Track & Trace', url: './trade-and-trace.html' },
-            { text: 'ARtificail Intellignece', url: './artifical-intelligance.html' },
-            { text: 'Fintech', url: './fintech.html' },
-            { text: 'Analytics', url: './analytics-power-bi.html' },
-            { text: 'CRM', url: './crm.html' },
+            { text: 'Enterprise Applications', url: '../pages/enterprise.html' },
+            { text: 'Track & Trace', url: '../pages/trade-and-trace.html' },
+            { text: 'ARtificail Intellignece', url: '../pages/artifical-intelligance.html' },
+            { text: 'Fintech', url: '../pages/fintech.html' },
+            { text: 'Analytics', url: '../pages/analytics-power-bi.html' },
+            { text: 'CRM', url: '../pages/crm.html' },
             { text: 'ERP', url: '' },
-            { text: 'Access Control', url: './access-control.html' }
+            { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
             { text: 'AI-Powered Smart e-Challan System', url: '#ai-powered-smart-e-challan-system' },
@@ -134,10 +134,10 @@ function initializeMenu() {
             { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
         ],
         career: [
-            { text: 'Career', url: './career.html' }
+            { text: 'Career', url: '../pages/career.html' }
         ],
         contact: [
-            { text: 'Contact', url: './contactUs.html' }
+            { text: 'Contact', url: '../pages/contactUs.html' }
         ]
     };
 
@@ -207,16 +207,16 @@ function initializeMenu() {
         item.addEventListener('click', (e) => {
             const link = item.querySelector('a');
             const href = link?.getAttribute('href') || '';
-        
+
             // Agar link # se start hota hai (anchor) tabhi prevent karo
             if (href.startsWith('#')) {
                 e.preventDefault();
                 // Toggle active state
                 item.classList.toggle('active');
                 updateServicesMenu(section);
-        
+
                 if (arrow) arrow.classList.toggle('active');
-        
+
                 navItems.forEach(otherItem => {
                     if (otherItem !== item && otherItem.classList.contains('active')) {
                         otherItem.classList.remove('active');
@@ -226,7 +226,7 @@ function initializeMenu() {
                 });
             }
         });
-        
+
         // Add hover event for desktop
         item.addEventListener('mouseenter', () => {
             if (!item.classList.contains('active')) {
@@ -388,16 +388,16 @@ function initializeMobileSidebar() {
             'Our Business Partners'
         ],
         services: [
-            { text: 'SMART SURVEILLANCE', url: './smart-surveillance.html' },
-            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: './intelligent-transport.html' },
-            { text: 'SMART CITY', url: '#smart-city' },
-            { text: 'INTERNET OF THINGS', url: './iot.html' },
-            { text: 'CYBERSECURITY', url: './cyberSecurity.html' },
-            { text: 'GIS', url: '#gis' },
-            { text: 'CLOUD SERVICES', url: './cloudServices.html' },
-            { text: 'DATA CENTER', url: './data-center' },
-            { text: 'INFRASTRUCTURE', url: './infrastructure' },
-            { text: 'FIBER OPTIC', url: './fibre-optics.html' }
+            'SMART SURVEILLANCE',
+            'INTELLIGENT TRANSPORTATION SYSTEM',
+            'SMART CITY',
+            'INTERNET OF THINGS',
+            'CYBERSECURITY',
+            'GIS',
+            'CLOUD SERVICES',
+            'DATA CENTER',
+            'INFRASTRUCTURE',
+            'FIBER OPTIC'
         ],
         software: [
             'Enterprise Applications',
@@ -419,6 +419,7 @@ function initializeMobileSidebar() {
             'AI-Based Attendance Management',
             'Site Monitoring Solutions'
         ],
+
         career: [
             { text: 'Career', url: './career.html' }
         ],
@@ -1329,7 +1330,7 @@ function initializeRotatingText() {
     console.log('Found rotating texts:', rotatingTexts.length);
 
     if (rotatingTexts.length === 0) {
-        // console.log('No rotating texts found, retrying in 500ms...');
+        console.log('No rotating texts found, retrying in 500ms...');
         setTimeout(initializeRotatingText, 500);
         return;
     }
@@ -1982,7 +1983,7 @@ var started = false;
 if (window.location.pathname.includes('/pages/smart-surveillance.html')) {
     txt = 'Let’s Talk About Making <br> Your Spaces More Secure.';
 } else if (window.location.pathname.includes('/pages/about-Us.html')) {
-   txt = 'Let’s Talk About Making <br> Your Spaces More Secure.';;
+    txt = 'Let’s Talk About Making <br> Your Spaces More Secure.';;
 } else {
     txt = 'PLANNING SOMETHING BIG?';
 }
@@ -2089,8 +2090,8 @@ function initializeBackToTop() {
     const backToTopBtn = document.getElementById('backToTop');
     const progressCircle = document.getElementById('progressCircle');
     const heroSection = document.getElementById('heroSection');
-    
-    image-hero-section
+
+    image - hero - section
     console.log('Elements found:', {
         button: !!backToTopBtn,
         progress: !!progressCircle,
@@ -2494,5 +2495,5 @@ document.addEventListener('DOMContentLoaded', function () {
             swiperElement.addEventListener('mouseleave', () => swiper.autoplay.start());
         }
     });
-});         
+});
 
