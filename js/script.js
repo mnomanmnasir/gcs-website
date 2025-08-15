@@ -124,14 +124,14 @@ function initializeMenu() {
             { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
-            { text: 'AI-Powered Smart e-Challan System', url: '#ai-powered-smart-e-challan-system' },
-            { text: 'Smart Surveillance System', url: '#smart-surveillance-system' },
-            { text: 'Safe Cities Solutions', url: '#safe-cities-solutions' },
-            { text: 'Smart Cities Development', url: '#smart-cities-development' },
-            { text: 'Emergency & Response System', url: '#emergency-response-system' },
-            { text: 'Call Management System', url: '#call-management-system' },
-            { text: 'AI-Based Attendance Management', url: '#ai-based-attendance-management' },
-            { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
+            { text: 'AI-Powered Smart e-Challan System', url: '../pages/AI-powered-smart-challan.html' },
+            { text: 'Smart Surveillance System', url: '../pages/Smart-Surveillance-System.html' },
+            { text: 'Safe Cities Solutions', url: '../pages/Safe-Cities-Solutions.html' },
+            { text: 'Smart Cities Development', url: '../pages/Smart-Cities-Development.html' },
+            { text: 'Emergency & Response System', url: '../pages/Emergency-Response-System.html' },
+            { text: 'Call Management System', url: '../pages/Call-Management-System.html' },
+            { text: 'AI-Based Attendance Management', url: '../pages/AI-Based-Attendance-System.html' },
+            { text: 'Site Monitoring Solutions', url: '../pages/Site-Monitoring-Solutions.html' }
         ],
         career: [
             { text: 'Career', url: '../pages/career.html' }
@@ -382,14 +382,14 @@ function initializeMobileSidebar() {
             { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
-            { text: 'AI-Powered Smart e-Challan System', url: '#ai-powered-smart-e-challan-system' },
-            { text: 'Smart Surveillance System', url: '#smart-surveillance-system' },
-            { text: 'Safe Cities Solutions', url: '#safe-cities-solutions' },
-            { text: 'Smart Cities Development', url: '#smart-cities-development' },
-            { text: 'Emergency & Response System', url: '#emergency-response-system' },
-            { text: 'Call Management System', url: '#call-management-system' },
-            { text: 'AI-Based Attendance Management', url: '#ai-based-attendance-management' },
-            { text: 'Site Monitoring Solutions', url: '#site-monitoring-solutions' }
+            { text: 'AI-Powered Smart e-Challan System', url: '../pages/AI-powered-smart-challan.html' },
+            { text: 'Smart Surveillance System', url: '../pages/Smart-Surveillance-System.html' },
+            { text: 'Safe Cities Solutions', url: '../pages/Safe-Cities-Solutions.html' },
+            { text: 'Smart Cities Development', url: '../pages/Smart-Cities-Development.html' },
+            { text: 'Emergency & Response System', url: '../pages/Emergency-Response-System.html' },
+            { text: 'Call Management System', url: '../pages/Call-Management-System.html' },
+            { text: 'AI-Based Attendance Management', url: '../pages/AI-Based-Attendance-System.html' },
+            { text: 'Site Monitoring Solutions', url: '../pages/Site-Monitoring-Solutions.html' }
         ],
         career: [
             { text: 'Career', url: '../pages/career.html' }
