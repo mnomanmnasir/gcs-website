@@ -99,7 +99,7 @@ function initializeMenu() {
             { text: 'About Us', url: '../pages/about-Us.html' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
-            { text: 'Gallery', url: '#gallery' },
+            { text: 'Gallery', url: '../pages/gallery.html' },
             { text: 'Events', url: '#events' },
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
@@ -151,7 +151,7 @@ function initializeMenu() {
             { text: 'About Us', url: './pages/about-Us.html' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
-            { text: 'Gallery', url: '#gallery' },
+            { text: 'Gallery', url: './pages/gallery.html' },
             { text: 'Events', url: '#events' },
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
@@ -408,7 +408,7 @@ function initializeMobileSidebar() {
             { text: 'About Us', url: '../pages/about-Us.html' },
             { text: 'Projects', url: '#projects' },
             { text: 'Our Clients', url: '#clients' },
-            { text: 'Gallery', url: '#gallery' },
+            { text: 'Gallery', url: '../pages/gallery.html' },
             { text: 'Events', url: '#events' },
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
