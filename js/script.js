@@ -187,12 +187,7 @@ function initializeMenu() {
             { text: 'AI-Based Attendance Management', url: './pages/AI-Based-Attendance-System.html' },
             { text: 'Site Monitoring Solutions', url: './pages/Site-Monitoring-Solutions.html' }
         ],
-        career: [
-            { text: 'Career', url: './pages/career.html' }
-        ],
-        contact: [
-            { text: 'Contact', url: './pages/contactUs.html' }
-        ]
+     
     };
 
     // Get elements
@@ -203,8 +198,8 @@ function initializeMenu() {
         const servicesMenu = document.getElementById('dynamicServicesMenu');
         servicesMenu.innerHTML = '';
         const currentRoute = window.location.href;
-        console.log("currentRoute", currentRoute.split("/").pop() =='index.html'? 'home': section);
-        const currentSection = currentRoute.split("/").pop() =='index.html'? 'home': section;
+        console.log("currentRoute", currentRoute.split("/").pop() == 'index.html' ? 'home' : section);
+        const currentSection = currentRoute.split("/").pop() == 'index.html' ? 'home' : section;
         const services = currentSection == 'home' ? menuData2[section] : menuData[section] || [];
 
         services.forEach((service, index) => {
@@ -1869,11 +1864,26 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.8 });
 
 
+// function showNewsletterPopup() {
+//     document.getElementById("black-overlay-div").style.opacity = "1";
+//     document.getElementById("black-overlay-div").style.visibility = "visible";
+//     document.getElementById("global-newsletter-section").style.top = "0";
+//     document.body.style.overflow = 'hidden';
+// }
 function showNewsletterPopup() {
+    // Check if already shown in this session
+    if (sessionStorage.getItem("newsletterShown")) {
+        return;
+    }
+
+    // Show popup
     document.getElementById("black-overlay-div").style.opacity = "1";
     document.getElementById("black-overlay-div").style.visibility = "visible";
     document.getElementById("global-newsletter-section").style.top = "0";
     document.body.style.overflow = 'hidden';
+
+    // Mark as shown for this session
+    sessionStorage.setItem("newsletterShown", "true");
 }
 
 function hideNewsletterPopup() {
