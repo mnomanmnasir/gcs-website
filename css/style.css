@@ -2476,7 +2476,7 @@ svg * {
     background-size: cover;
 }
 
-.faq-section-service{
+.faq-section-service {
     background-color: #F8F9FA;
     padding: 5rem 0;
     padding-top: 6rem;
@@ -4318,8 +4318,8 @@ body.sidebar-open {
     } */
 
     .badge-circle {
-        width: 0px;
-        height: 0px;
+        width: 60px;
+        height: 60px;
         position: relative;
         left: 0;
         top: 0;
@@ -4329,9 +4329,14 @@ body.sidebar-open {
 
     #work-badge-circle {
         position: relative;
-        left: 9px;
-        top: -15px;
+        /* left: 9px;
+        top: -15px; */
         transform: none;
+        left: 150px;
+        top: -9px;
+        transform: none;
+        position: relative;
+        margin: 0 auto;
     }
 
     .work-content {
@@ -5630,7 +5635,13 @@ body.sidebar-open {
     list-style: none;
     padding-left: 0;
     margin: 0;
+    /* font-size: 15px; */
 }
+/* 
+.sub-service{
+    font-size: 15px;
+
+} */
 
 .sub-services li {
     padding: 8px 0;
@@ -5767,9 +5778,9 @@ body.sidebar-open {
 }
 
 
-.hero-background-image {
+/* .hero-background-image {
     height: 100vh !important;
-}
+} */
 
 
 /* Careers Page styling */
@@ -5795,7 +5806,7 @@ body.sidebar-open {
 }
 
 .job-card {
-    background: #fff;
+    background: #f2f2f2;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 25px;
@@ -5837,13 +5848,14 @@ body.sidebar-open {
 
 .buttons {
     margin-top: 20px;
+    justify-content: space-between;
 }
 
 .btn-apply,
 .btn-view {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     margin-right: 15px;
     font-weight: 500;
@@ -5876,16 +5888,19 @@ body.sidebar-open {
     padding: 0 20px;
     display: flex;
     gap: 15px;
+    border-bottom: 2px solid #e74c3c;
     flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .search-bar input,
 .search-bar select {
     padding: 12px 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 15px;
     flex-grow: 1;
-    min-width: 200px;
+    min-width: 220px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -5905,7 +5920,6 @@ body.sidebar-open {
     background: #c0392b;
 }
 
-
 /* Contact Section */
 .contact-section {
     /* max-width: 1200px; */
@@ -5917,7 +5931,6 @@ body.sidebar-open {
             padding: 30px; */
     /* background: white; */
     border-radius: 8px;
-
 }
 
 .map-container {
@@ -6087,11 +6100,13 @@ body.sidebar-open {
     flex: 1;
     min-width: 350px;
     padding: 40px;
-    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+    /* background-color: #f8f9fa; */
 }
 
 .form-group {
     margin-bottom: 20px;
+    /* border-radius: 30px; */
 }
 
 .form-group label {
@@ -6106,11 +6121,13 @@ body.sidebar-open {
 .form-group textarea {
     width: 100%;
     padding: 10px 12px;
+            font-family: 'Poppins', sans-serif;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 14px;
-    font-family: 'Arial', sans-serif;
+    /* font-family: 'Arial', sans-serif;     */
     background-color: #fff;
+    border-radius: 15px;
 }
 
 .form-group textarea {
@@ -6119,7 +6136,7 @@ body.sidebar-open {
 }
 
 .submit-btn {
-    background-color: #C94050;
+    background-color: #BF3646;
     color: white;
     border: none;
     padding: 10px 25px;
@@ -6273,7 +6290,7 @@ body.sidebar-open {
 }
 
 .sub-service {
-    font-size: 13px;
+    font-size: 15px;
     color: #333;
     padding-left: 12px;
     position: relative;
@@ -6298,6 +6315,11 @@ body.sidebar-open {
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .service-column > .sub-service{
+    font-size: 15px;
+
+    }
 }
 
 @media (max-width: 600px) {
@@ -6306,7 +6328,7 @@ body.sidebar-open {
     }
 }
 
-.faq-section-service{
+.faq-section-service {
     background-color: #f2f2f2f2;
     padding: 1.6rem
 }
@@ -6335,7 +6357,7 @@ body.sidebar-open {
     width: 100%;
     height: 100%;
     object-fit: cover;
-   
+
 }
 
 .video-overlay {
@@ -6358,11 +6380,48 @@ body.sidebar-open {
 #cta-section {
     position: relative;
     min-height: 55vh;
- 
+
 }
 
 /* Optional: Full height centering */
 #cta-section .row {
     min-height: 55vh;
 
+}
+
+.search-bar-container {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-input-container {
+    position: relative;
+    flex: 1;
+    min-width: 250px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s;
 }
