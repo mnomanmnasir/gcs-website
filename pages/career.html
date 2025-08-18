@@ -31,7 +31,7 @@
         <nav class="navbar navbar-expand-lg py-0">
             <div class="container px-0">
                 <!-- Logo -->
-                <a class="navbar-brand" href="#" id="logo">
+                <a class="navbar-brand" href="/" id="logo">
                     <img src="../assets/images/GCS-logo.webp" alt="GCS Logo" class="logo-img" id="logoImg">
                 </a>
                 <button id="menuToggle"
@@ -119,10 +119,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./career.html" class="nav-link">CAREERS</a>
+                            <a href="../pages/career.html" class="nav-link">CAREERS</a>
                         </li>
                         <li class="nav-item">
-                            <a href="./contactUs.html" class="nav-link">CONTACT US</a>
+                            <a href="../pages/contactUs.html" class="nav-link">CONTACT US</a>
                         </li>
                     </ul>
                 </div>
@@ -190,7 +190,9 @@
 
     <!-- Open position career -->
     <!-- Open position career -->
-    <h2 style="  text-align: center;
+<div style="background-image: url('../assets/images/back-line.png');">
+
+<h2 style="text-align: center;
     font-size: 32px;
     font-weight: 600;
     color: #C94050;
@@ -216,6 +218,8 @@
     </div>
 
     <div id="jobContainer"></div>
+    </div>
+
     <!-- Footer Section -->
     <footer class="footer-section">
         <div class="container">
@@ -355,7 +359,7 @@
                                     ${job.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                                 </div>
                                 <p>${job.description}</p>
-                                <div class="buttons">
+                                <div class="d-flex">
                                     <button class="btn-apply">Apply Now</button>
                                     <button class="btn-view">View Details</button>
                                 </div>
