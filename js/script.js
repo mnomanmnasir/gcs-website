@@ -109,7 +109,7 @@ function initializeMenu() {
             { text: 'SMART CITY', url: '../pages/smartCity.html' },
             { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
             { text: 'CYBERSECURITY', url: '../pages/cyberSecurity.html' },
-            { text: 'GIS', url: '../pages' },
+            { text: 'GIS', url: '../pages/GIS.html' },
             { text: 'CLOUD SERVICES', url: '../pages/cloudServices.html' },
             { text: 'DATA CENTER', url: '../pages/data-center' },
             { text: 'INFRASTRUCTURE', url: '../pages/infrastructure.html' },
@@ -122,7 +122,7 @@ function initializeMenu() {
             { text: 'Fintech', url: '../pages/fintech.html' },
             { text: 'Analytics', url: '../pages/analytics-power-bi.html' },
             { text: 'CRM', url: '../pages/crm.html' },
-            { text: 'ERP', url: '' },
+            { text: 'ERP', url: '../pages/ERP.html' },
             { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
@@ -394,6 +394,7 @@ function initializeMenu() {
         }
     });
 }
+
 // Enhanced mobile sidebar functionality
 function initializeMobileSidebar() {
     // Only run on mobile devices
@@ -431,7 +432,7 @@ function initializeMobileSidebar() {
             { text: 'Fintech', url: '../pages/fintech.html' },
             { text: 'Analytics', url: '../pages/analytics-power-bi.html' },
             { text: 'CRM', url: '../pages/crm.html' },
-            { text: 'ERP', url: '' },
+            { text: 'ERP', url: '../pages/ERP.html' },
             { text: 'Access Control', url: '../pages/access-control.html' }
         ],
         products: [
