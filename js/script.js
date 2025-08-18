@@ -93,7 +93,7 @@ function initializeMenu() {
     // Menu data
     const menuData = {
         home: [
-            { text: 'Home', url: '../' },
+            { text: 'Home', url: './index.html' },
         ],
         about: [
             { text: 'About Us', url: '../pages/about-Us.html' },
@@ -104,7 +104,7 @@ function initializeMenu() {
             { text: 'Our Business Partners', url: '#business-partners' }
         ],
         services: [
-            { text: 'SMART SURVEILLANCE', url: './pages/smart-surveillance.html' },
+            { text: 'SMART SURVEILLANCE', url: '../pages/smart-surveillance.html' },
             { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: '../pages/intelligent-transport.html' },
             { text: 'SMART CITY', url: '../pages/smartCity.html' },
             { text: 'INTERNET OF THINGS', url: '../pages/iot.html' },
@@ -143,6 +143,58 @@ function initializeMenu() {
         ]
     };
 
+    const menuData2 = {
+        home: [
+            { text: 'Home', url: 'index.html' },
+        ],
+        about: [
+            { text: 'About Us', url: './pages/about-Us.html' },
+            { text: 'Projects', url: '#projects' },
+            { text: 'Our Clients', url: '#clients' },
+            { text: 'Gallery', url: '#gallery' },
+            { text: 'Events', url: '#events' },
+            { text: 'Our Business Partners', url: '#business-partners' }
+        ],
+        services: [
+            { text: 'SMART SURVEILLANCE', url: './pages/smart-surveillance.html' },
+            { text: 'INTELLIGENT TRANSPORTATION SYSTEM', url: './pages/intelligent-transport.html' },
+            { text: 'SMART CITY', url: './pages/smartCity.html' },
+            { text: 'INTERNET OF THINGS', url: './pages/iot.html' },
+            { text: 'CYBERSECURITY', url: './pages/cyberSecurity.html' },
+            { text: 'GIS', url: '#gis' },
+            { text: 'CLOUD SERVICES', url: './pages/cloudServices.html' },
+            { text: 'DATA CENTER', url: './pages/data-center.html' },
+            { text: 'INFRASTRUCTURE', url: './pages/infrastructure.html' },
+            { text: 'FIBER OPTIC', url: './pages/fibre-optics.html' }
+        ],
+        software: [
+            { text: 'Enterprise Applications', url: './pages/enterprise.html' },
+            { text: 'Track & Trace', url: './pages/trade-and-trace.html' },
+            { text: 'ARtificail Intellignece', url: './pages/artifical-intelligance.html' },
+            { text: 'Fintech', url: './pages/fintech.html' },
+            { text: 'Analytics', url: './pages/analytics-power-bi.html' },
+            { text: 'CRM', url: './pages/crm.html' },
+            { text: 'ERP', url: '' },
+            { text: 'Access Control', url: './pages/access-control.html' }
+        ],
+        products: [
+            { text: 'AI-Powered Smart e-Challan System', url: './pages/AI-powered-smart-challan.html' },
+            { text: 'Smart Surveillance System', url: './pages/Smart-Surveillance-System.html' },
+            { text: 'Safe Cities Solutions', url: './pages/Safe-Cities-Solutions.html' },
+            { text: 'Smart Cities Development', url: './pages/Smart-Cities-Development.html' },
+            { text: 'Emergency & Response System', url: './pages/Emergency-Response-System.html' },
+            { text: 'Call Management System', url: './pages/Call-Management-System.html' },
+            { text: 'AI-Based Attendance Management', url: './pages/AI-Based-Attendance-System.html' },
+            { text: 'Site Monitoring Solutions', url: './pages/Site-Monitoring-Solutions.html' }
+        ],
+        career: [
+            { text: 'Career', url: './pages/career.html' }
+        ],
+        contact: [
+            { text: 'Contact', url: './pages/contactUs.html' }
+        ]
+    };
+
     // Get elements
     const navItems = document.querySelectorAll('.nav-item');
     const servicesMenu = document.getElementById('dynamicServicesMenu');
@@ -150,8 +202,10 @@ function initializeMenu() {
     function updateServicesMenu(section) {
         const servicesMenu = document.getElementById('dynamicServicesMenu');
         servicesMenu.innerHTML = '';
-
-        const services = menuData[section] || [];
+        const currentRoute = window.location.href;
+        console.log("currentRoute", currentRoute.split("/").pop() =='index.html'? 'home': section);
+        const currentSection = currentRoute.split("/").pop() =='index.html'? 'home': section;
+        const services = currentSection == 'home' ? menuData2[section] : menuData[section] || [];
 
         services.forEach((service, index) => {
             const li = document.createElement('li');
@@ -280,7 +334,7 @@ function initializeMenu() {
         document.body.style.position = '';
         document.body.style.width = '';
         document.body.style.top = '';
-        wwindow.scrollTo({
+        window.scrollTo({
             top: scrollPosition,
             left: 0,
             behavior: 'instant'
@@ -532,7 +586,7 @@ function handleMobileMenuClick(event) {
             }
         }, 100);
     }
-    
+
     return false;
 }
 
@@ -540,7 +594,7 @@ function handleMobileMenuClick(event) {
 function handleMobileServiceClick(event) {
     // Don't prevent default here, let the link work normally
     event.stopPropagation();
-    
+
     // Remove active class from all service links
     document.querySelectorAll('.mobile-services-list a').forEach(link => {
         link.classList.remove('active');
@@ -553,13 +607,13 @@ function handleMobileServiceClick(event) {
     const serviceName = event.currentTarget.textContent;
     const serviceUrl = event.currentTarget.getAttribute('href');
     console.log('Mobile service clicked:', serviceName, 'URL:', serviceUrl);
-    
+
     // Close the mobile menu after a short delay to allow the click to process
     setTimeout(() => {
         const sidebar = document.querySelector('.sidebar');
         if (sidebar) {
             sidebar.classList.remove('active');
-            
+
             // If it's an anchor link, scroll to the section
             if (serviceUrl.startsWith('#')) {
                 const targetId = serviceUrl.substring(1);
