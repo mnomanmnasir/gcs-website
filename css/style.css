@@ -9,11 +9,16 @@
     --border-gray: #444444;
 }
 
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Job Detail Page */
+.job-description,
+.job-requirements,
+.job-overview,
+.how-to-apply,
+.job-section h3,
+.job-tag,
+.job-overview p,
+.job-overview h6 {
+    color: #000000 !important;
 }
 
 .nav-arrow {
@@ -5858,11 +5863,13 @@ body.sidebar-open {
     margin-right: 15px;
     font-weight: 500;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-apply {
     background: #C94050;
     color: white;
+    text-decoration: none;
 }
 
 .btn-apply:hover {
