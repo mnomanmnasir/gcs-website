@@ -20,6 +20,53 @@
         integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        /* File Upload Styles */
+        .file-upload-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .file-upload-label {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 2px dashed #ccc;
+            border-radius: 6px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 46px;
+        }
+        
+        .file-upload-label:hover {
+            border-color: #007bff;
+            background-color: #e9f5ff;
+        }
+        
+        .file-upload-label svg {
+            margin-right: 10px;
+            color: #6c757d;
+        }
+        
+        .file-name {
+            margin-left: 10px;
+            color: #6c757d;
+            flex-grow: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .file-upload-label span:first-child {
+            font-weight: 500;
+            color: #495057;
+        }
+        
+        /* Hide the default file input */
+        input[type="file"] {
+            display: none;
+        }
+        
         .job-detail-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -70,24 +117,6 @@
             margin-top: 30px;
         }
 
-        .btn-apply {
-            background: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .btn-back {
-            background: #6c757d;
-            color: white;
-            padding: 10px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 
@@ -517,6 +546,12 @@
                     items.map(item => `<li>${item}</li>`).join('') +
                     '</ul>';
             };
+
+            // File upload handler
+            document.getElementById('cv-upload').addEventListener('change', function(e) {
+                const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+                document.querySelector('.file-name').textContent = fileName;
+            });
 
             // Set up job content
             document.getElementById('jobContent').innerHTML = `
