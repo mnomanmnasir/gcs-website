@@ -6,6 +6,96 @@
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - GCS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"
+        integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .job-detail-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .job-header {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .job-title {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .job-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .job-tag {
+            background: #e9ecef;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #495057;
+        }
+
+        .job-section {
+            margin-bottom: 30px;
+        }
+
+        .job-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn-apply {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .btn-back {
+            background: #6c757d;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GCS Website</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
@@ -145,7 +235,7 @@
                     </a>
                     <a href="#" class="social-icon-side">
                         <img src="../assets/images/side-menu-icons/twitter.svg" alt="Twitter" style="
-                        margin-right: -5px" />
+                         margin-right: -5px" />
                     </a>
                     <a href="#" class="social-icon-side">
                         <img src="../assets/images/side-menu-icons/youtube.svg" alt="YouTube" />
@@ -171,7 +261,7 @@
                 <div class="col-lg-12 col-md-6 col-sm-4 col-xl-12">
                     <div style="margin-top: -300px;">
                         <h1 class="smart-surveillance">
-                            <span style="font-size: larger">Careers</span>
+                            <span style="font-size: larger">Apply For Job</span>
                         </h1>
                         <!-- <p class="hero-subtitle">
                                 RELIABLE | SCALABLE | IMPACTFUL
@@ -187,40 +277,105 @@
             </div>
         </div>
     </section>
+    <!-- Job Detail Content -->
+    <div class="job-detail-container">
+        <!-- <a href="career.html" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Back to Careers
+        </a> -->
 
-    <!-- Open position career -->
-    <!-- Open position career -->
-    <div style="background-image: url('../assets/images/back-line.png');">
-
-        <h2 style="text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    color: #C94050;
-    margin: 40px 0 20px;
-    font-family: 'Poppins', sans-serif;">OUR OPEN POSITIONS</h2>
-
-        <div class="search-bar">
-            <input type="text" placeholder="Search Job" id="searchInput">
-            <select id="jobTypeFilter">
-                <option>Job Type</option>
-                <option>Full-time</option>
-                <option>Part-time</option>
-                <option>Contract</option>
-            </select>
-            <select>
-                <option>Location</option>
-                <option>Karachi</option>
-                <option>Lahore</option>
-                <option>Islamabad</option>
-                <option>Remote</option>
-            </select>
-            <button id="searchBtn">Search</button>
+        <div class="job-header">
+            <h1 class="job-title" id="jobTitle">Loading Job Details...</h1>
+            <div class="job-meta" id="jobMeta"></div>
+            <!-- <div class="job-actions">
+                <a href="#" class="btn-apply" id="applyNowBtn">Apply Now</a>
+            </div> -->
         </div>
 
-        <div id="jobContainer"></div>
+        <div id="jobContent">
+            <!-- Job details will be loaded here -->
+        </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Right Side - Contact Form -->
+    <div class="container justify-content-center align-items-center col-lg-6 mb-5">
+        <h3 class="container text-black text-center">Application Form</h3>
+        <form>
+            <div class="form-group">
+                <!-- <label for="name">Your Name</label> -->
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="phone">Phone Number</label> -->
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="email">Email Address</label> -->
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+
+            <!-- <div class="form-group"> -->
+
+                <div class="form-group">
+                    <!-- <label for="city" class="form-label">City <span class="text-danger">*</span></label> -->
+                    <select class="form-select" id="city" name="city" required>
+                        <option value="" selected disabled hidden>Select your city</option>
+                        <option value="karachi">Karachi</option>
+                        <option value="lahore">Lahore</option>
+                        <option value="islamabad">Islamabad</option>
+                        <option value="peshawar">Peshawar</option>
+                        <option value="quetta">Quetta</option>
+                        <option value="multan">Multan</option>
+                        <option value="faisalabad">Faisalabad</option>
+                        <option value="hyderabad">Hyderabad</option>
+                    </select>
+                </div>
+            <!-- </div> -->
+
+            <div class="form-group">
+                <!-- <label for="city" class="form-label">City <span class="text-danger">*</span></label> -->
+                <select class="form-select" id="city" name="city" required>
+                    <option value="" selected disabled hidden>Job Title</option>
+                    <option value="karachi">Frontend Developer</option>
+                    <option value="lahore">Backend Developer</option>
+                    <option value="islamabad">Finance</option>
+                    <option value="peshawar">Human Resources</option>
+                    <!-- <option value="quetta">Quetta</option>
+                    <option value="multan">Multan</option>
+                    <option value="faisalabad">Faisalabad</option>
+                    <option value="hyderabad">Hyderabad</option> -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="file-upload-wrapper">
+                    <label for="cv-upload" class="file-upload-label">
+                        <span>Upload CV/Resume</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708l3-3z"/>
+                        </svg>
+                        <span class="file-name">No file chosen</span>
+                    </label>    
+                    <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" required style="display: none;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="subject">Subject</label> -->
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="message">Write a Message</label> -->
+                <textarea id="message" name="message" placeholder="Write a Message" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+    <!-- Footer Section (Same as career.html) -->
     <footer class="footer-section">
         <div class="container">
             <!-- Logo Section (First Line) -->
@@ -305,7 +460,7 @@
 
             <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p class="footer-copyright">© 2025 GCS Pvt. Ltd. All rights reserved.</p>
+                <p class="footer-copyright"> 2025 GCS Pvt. Ltd. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -314,150 +469,122 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get job data from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const jobTitle = urlParams.get('jobTitle') || 'Job Title';
+            const jobId = urlParams.get('jobId') || '';
 
-    <button id="backToTop" class="back-to-top">
-        <svg class="progress-ring">
-            <circle class="progress-ring__circle"></circle>
-            <circle class="progress-ring__progress" id="progressCircle"></circle>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="16" fill="white" class="bi bi-arrow-up-short"
-            viewBox="0 0 16 16">
-            <path fill-rule="evenodd"
-                d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5" />
-        </svg>
-    </button>
-<script src="../js/mockup.js"></script> 
-<script>
-    let allJobsData = [];
-
-    document.addEventListener('DOMContentLoaded', function () {
-        // Make sure mockupData is available
-        if (window.mockupData) {
-            allJobsData = window.mockupData;
-            renderJobs(allJobsData);
-        } else {
-            console.error("mockupData not found in mockup.js");
-        }
-
-        // Add event listeners for search and filters
-        const searchBtn = document.getElementById('searchBtn');
-        const searchInput = document.getElementById('searchInput');
-        const jobTypeFilter = document.getElementById('jobTypeFilter');
-        const locationFilter = document.querySelector('select:not(#jobTypeFilter)');
-
-        if (searchBtn) {
-            searchBtn.addEventListener('click', filterJobs);
-        }
-
-        if (searchInput) {
-            searchInput.addEventListener('keyup', function (event) {
-                if (event.key === 'Enter') {
-                    filterJobs();
+            // Find the job details from mockupData
+            let jobDetails = null;
+            if (window.parent.mockupData) {
+                for (const category of window.parent.mockupData) {
+                    const job = category.jobs.find(j => j.title === jobTitle);
+                    if (job) {
+                        jobDetails = job;
+                        break;
+                    }
                 }
-            });
-        }
+            }
 
-        if (jobTypeFilter) {
-            jobTypeFilter.addEventListener('change', filterJobs);
-        }
+            // Update the page with job details
+            document.title = `${jobTitle} - GCS Careers`;
+            document.getElementById('jobTitle').textContent = jobTitle;
 
-        if (locationFilter) {
-            locationFilter.addEventListener('change', filterJobs);
-        }
-    });
+            // Display job tags if available
+            const jobMeta = document.getElementById('jobMeta');
+            jobMeta.innerHTML = ''; // Clear any existing tags
 
-    function renderJobs(data) {
-        const container = document.getElementById('jobContainer');
-        if (!container) return;
+            if (jobDetails && jobDetails.tags) {
+                jobDetails.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'job-tag';
+                    tagElement.textContent = tag;
+                    jobMeta.appendChild(tagElement);
+                });
+            }
 
-        container.innerHTML = '';
+            // Format job description with line breaks
+            const formattedDescription = jobDetails.description
+                ? jobDetails.description.replace(/\n/g, '')
+                : 'No description available.';
 
-        if (!data || data.length === 0) {
-            container.innerHTML = '<div style="text-align: center; padding: 40px;">No job openings match your search criteria.</div>';
-            return;
-        }
+            // Function to create list items from array
+            const createListItems = (items) => {
+                if (!items || !items.length) return '<p>Not specified.</p>';
+                return '<ul class="job-detail-list">' +
+                    items.map(item => `<li>${item}</li>`).join('') +
+                    '</ul>';
+            };
 
-        data.forEach(section => {
-            if (section.jobs && section.jobs.length > 0) {
-                let sectionHTML = `
-                    <div class="section">
-                        <div class="career-title">${section.category}</div>
-                `;
+            // Set up job content
+            document.getElementById('jobContent').innerHTML = `
+                <div class="job-section">
+                    <h3>Job Description</h3>
+                    <div class='text-black job-description'>${formattedDescription}</div>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Qualifications</h3>
+                    <div class="text-black job-detail-content">
+                        ${jobDetails.qualifications ? createListItems(jobDetails.qualifications) : '<p>No specific qualifications mentioned.</p>'}
+                    </div>
+                </div>
 
-                section.jobs.forEach(job => {
-                    // Use shortDescription if available, otherwise truncate the description
-                    const shortDesc = job.shortDescription || 
-                        (job.description.length > 150 ? 
-                         job.description.substring(0, 150) + '...' : 
-                         job.description);
-                    
-                    // Create a data object to pass to the details page
-                    const jobData = {
-                        title: job.title,
-                        description: job.description || job.shortDescription,
-                        tags: job.tags || []
-                    };
-                    
-                    sectionHTML += `
-                        <div class="job-card">
-                            <h3>${job.title}</h3>
-                            <div class="tags">
-                                ${job.tags.map(tag => {
-                                    // Only show first 3 tags to keep it clean
-                                    const parts = tag.split(':');
-                                    const displayTag = parts.length > 1 ? parts[1].trim() : tag;
-                                    return `<span class="tag">${displayTag}</span>`;
-                                }).slice(0, 3).join('')}
-                            </div>
-                            <p class="job-short-desc">${shortDesc}</p>
-                            <div class="d-flex">
-                                <a href="job-apply.html?jobTitle=${encodeURIComponent(job.title)}&jobId=${encodeURIComponent(job.title.toLowerCase().replace(/\s+/g, '-'))}" class="btn-apply">Apply Now</a>
-                                <a href="job-detail.html?jobTitle=${encodeURIComponent(job.title)}&jobId=${encodeURIComponent(job.title.toLowerCase().replace(/\s+/g, '-'))}" class="btn-view">View Details</a>
-                            </div>
-                        </div>
-                    `;
+                  <div class="job-section">
+                    <h3>Application Instructions</h3>
+                    <div class="text-black job-detail-content">
+                        ${jobDetails.applicationInstructions ? createListItems(jobDetails.applicationInstructions) : '<p>No specific applicationInstructions mentioned.</p>'}
+                    </div>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Experience</h3>
+                    <div class="text-black job-detail-content">
+                        ${jobDetails.experience ? createListItems(jobDetails.experience) : '<p>Experience requirements not specified.</p>'}
+                    </div>
+                </div>
+                
+                <div class="job-section">
+                    <h3>Benefits</h3>
+                    <div class="text-black job-detail-content">
+                        ${jobDetails.benefits ? createListItems(jobDetails.benefits) : '<p>Benefits information not available.</p>'}
+                    </div>
+                </div>
+
+            // `;
+
+            // Set up apply now button
+            // const applyButton = document.getElementById('applyNowBtn');
+            // applyButton.addEventListener('click', function(e) {
+            //     e.preventDefault();
+            //     // In a real app, this would open an application form or redirect to application page
+            //     alert(`Application form for "${jobTitle}" will open here.`);
+            //     // To implement later: window.location.href = `apply.html?job=${encodeURIComponent(jobTitle)}`;
+            // });
+
+            // Add back to top button functionality
+            const backToTopButton = document.getElementById('backToTop');
+            if (backToTopButton) {
+                backToTopButton.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
 
-                sectionHTML += `</div>`;
-                container.innerHTML += sectionHTML;
+                // Show/hide back to top button based on scroll position
+                window.addEventListener('scroll', () => {
+                    if (window.pageYOffset > 300) {
+                        backToTopButton.style.display = 'block';
+                    } else {
+                        backToTopButton.style.display = 'none';
+                    }
+                });
             }
         });
-
-        if (container.innerHTML === '') {
-            container.innerHTML = '<div style="text-align: center; padding: 40px;">No job openings match your search criteria.</div>';
-        }
-    }
-
-    function filterJobs() {
-        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-        const jobType = document.getElementById('jobTypeFilter').value;
-        const locationFilter = document.querySelector('select:not(#jobTypeFilter)');
-        const location = locationFilter ? locationFilter.value : '';
-
-        const filteredData = allJobsData.map(section => {
-            const filteredJobs = section.jobs.filter(job => {
-                const matchesSearch =
-                    job.title.toLowerCase().includes(searchTerm) ||
-                    job.description.toLowerCase().includes(searchTerm);
-
-                const matchesJobType = jobType === "Job Type" || !jobType || job.tags.includes(jobType);
-
-                const matchesLocation = location === "Location" || !location || job.tags.includes(location);
-
-                return matchesSearch && matchesJobType && matchesLocation;
-            });
-
-            return {
-                ...section,
-                jobs: filteredJobs
-            };
-        });
-
-        renderJobs(filteredData);
-    }
-</script>
-
+    </script>
 </body>
 
 </html>
