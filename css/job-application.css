@@ -1,0 +1,378 @@
+/* Job Application Form Styles */
+.job-application-form {
+    /* padding: 2rem 0; */
+    /* background-color: #f8f9fa; */
+    min-height: 100vh;
+}
+
+.application-form-container {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Progress Steps */
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 3rem;
+    position: relative;
+    max-width: 900px;
+    counter-reset: step;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #e9ecef;
+    z-index: 1;
+}
+
+.progress-steps .step {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    flex: 1;
+    padding: 0 10px;
+}
+
+.progress-steps .step:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.progress-steps .step-number {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border: 3px solid #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.75rem;
+    font-weight: 700;
+    color: #6c757d;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.progress-steps .step.active .step-number {
+    border-color: #C94050;
+    color: #dc3545;
+    transform: scale(1.1);
+    background-color: #f0f7ff;
+}
+
+.progress-steps .step.completed .step-number {
+    background: #C94050;
+    border-color: #e9ecef;
+    color: #fff;
+}
+
+.progress-steps .step.completed .step-number::after {
+    content: '✓';
+    font-size: 1.2rem;
+}
+
+.progress-steps .step-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.progress-steps .step.active .step-label,
+.progress-steps .step.completed .step-label {
+    color: #C94050;
+    font-weight: 600;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    padding: 1rem 0;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-section-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 1.4rem;
+}
+
+/* Form Controls */
+.form-control,
+.form-select,
+.form-control:focus,
+.form-select:focus {
+    padding: 0.75rem 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* File Upload Styles */
+.file-upload-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.file-upload-label:hover {
+    border-color: #86b7fe;
+    background-color: #f1f8ff;
+}
+
+.file-upload-label .file-name {
+    margin-left: 10px;
+    color: #6c757d;
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-upload-label svg {
+    margin-right: 8px;
+    color: #0d6efd;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.btn-outline-secondary {
+    border: 1px solid #dee2e6;
+    color: #495057;
+    background-color: #fff;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #0d6efd;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #157347;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(25, 135, 84, 0.2);
+}
+
+.btn-outline-primary {
+    color: #0d6efd;
+    border: 1px solid #0d6efd;
+    background-color: transparent;
+}
+
+.btn-outline-primary:hover {
+    background-color: #f0f7ff;
+    color: #0b5ed7;
+    border-color: #0b5ed7;
+}
+
+/* Form Validation */
+.is-invalid {
+    border-color: #dc3545 !important;
+    padding-right: calc(1.5em + 0.75rem);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+.invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+/* Experience and Education Entries */
+.experience-entry,
+.education-entry {
+    position: relative;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.experience-entry:hover,
+.education-entry:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.remove-experience,
+.remove-education {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.remove-experience:hover,
+.remove-education:hover {
+    opacity: 1;
+    color: #dc3545;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .application-form-container {
+        padding: 1.5rem;
+    }
+    
+    .progress-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+    
+    .progress-steps::before {
+        height: 100%;
+        width: 4px;
+        left: 13px;
+        top: 0;
+    }
+    
+    .step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+    
+    .step-number {
+        margin: 0 1rem 0 0 !important;
+        flex-shrink: 0;
+    }
+    
+    .step-label {
+        text-align: left;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .d-flex.justify-content-between {
+        flex-direction: column;
+    }
+    
+    .d-flex.justify-content-between .btn {
+        margin-bottom: 0.75rem;
+    }
+    
+    .d-flex.justify-content-between .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Animation for form steps */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+}
